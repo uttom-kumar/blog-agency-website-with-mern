@@ -7,7 +7,7 @@ const BlogListStore = create((set)=>({
 
     BlogList: null,
     BlogListRequest: async () => {
-        let url = `http://localhost:5050/api/BlogRead`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/BlogRead`
         let res = await axios.get(url);
         if(res.data['status'] === "success"){
             set({BlogList: res.data.data})
@@ -15,7 +15,7 @@ const BlogListStore = create((set)=>({
     },
     BlogListDetails: null,
     BlogListDetailsRequest: async (blogID) => {
-        let url = `http://localhost:5050/api/BlogDetails/${blogID}`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/BlogDetails/${blogID}`
         let res = await axios.get(url);
         if(res.data['status'] === "success"){
             set({BlogListDetails: res.data.data})
@@ -35,7 +35,7 @@ const BlogListStore = create((set)=>({
     },
     BlogListCreateRequest: async (reqBody) => {
         try{
-            let url = `http://localhost:5050/api/BlogCreate`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/BlogCreate`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             if(res.data['status'] === "success"){
                 set({BlogFormData : res.data.data[0]})
@@ -50,7 +50,7 @@ const BlogListStore = create((set)=>({
 // -----------------blog update request -------------------------
     BlogUpdateRequest: async (blogID,reqBody) => {
         try{
-            let url = `http://localhost:5050/api/BlogUpdate/${blogID}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/BlogUpdate/${blogID}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             return res.data['status'] === "success"
         }
@@ -63,7 +63,7 @@ const BlogListStore = create((set)=>({
     BlogListFilterAdmin:null,
     BlogListFilterByAdminRequest: async () => {
         try{
-            let url = `http://localhost:5050/api/UserFilterByBlogList`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/UserFilterByBlogList`
             let res = await axios.get(url,{headers: {token : Cookies.get('token')}});
             if(res.data['status'] === "success"){
                 set({BlogListFilterAdmin: res.data.data})
@@ -78,7 +78,7 @@ const BlogListStore = create((set)=>({
 // ----------------blog delete request -------------------------
     BlogDeleteRequest: async (blogID) => {
         try{
-            let url = `http://localhost:5050/api/BlogRemove/${blogID}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/BlogRemove/${blogID}`
             await axios.delete(url,{headers: {token : Cookies.get('token')}})
         }
         catch (err){

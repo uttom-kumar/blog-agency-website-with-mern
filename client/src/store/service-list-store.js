@@ -7,7 +7,7 @@ const ServiceListStore = create((set)=>({
     ServiceList:null,
     ServiceListReadRequest: async () => {
         set({ServiceList:null});
-        let url = `http://localhost:5050/api/ReadService`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/ReadService`
         let res = await axios.get(url)
         if(res.data['status'] === "success"){
             set({ServiceList: res.data.data})
@@ -17,7 +17,7 @@ const ServiceListStore = create((set)=>({
     userFilterByServiceList: null,
     userFilterByServiceListRequest: async () => {
         try{
-            let url = `http://localhost:5050/api/UserFilterByServiceList`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/UserFilterByServiceList`
             let res = await axios.get(url,{headers: {token : Cookies.get('token')}})
             if(res.data['status'] === "success"){
                 set({userFilterByServiceList: res.data.data})
@@ -39,7 +39,7 @@ const ServiceListStore = create((set)=>({
     },
     createServiceRequest: async (reqBody) => {
         try{
-            let url = `http://localhost:5050/api/CreateService`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/CreateService`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             if(res.data['status'] === "success"){
                 set({serviceFormData: res.data.data[0]})
@@ -53,7 +53,7 @@ const ServiceListStore = create((set)=>({
 //---------------------- Remove Team Request -------------------------------
     DeleteServiceRequest: async (id) => {
         try {
-            let url = `http://localhost:5050/api/RemoveService/${id}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/RemoveService/${id}`
             await axios.get(url,{headers: {token : Cookies.get('token')}})
         }
         catch (err){
@@ -63,7 +63,7 @@ const ServiceListStore = create((set)=>({
 // -------------------------- --- update Team request ----------------------------------
     updateServiceRequest: async (id,reqBody) => {
         try{
-            let url = `http://localhost:5050/api/UpdateService/${id}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/UpdateService/${id}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             return res.data['status'] === "success"
         }

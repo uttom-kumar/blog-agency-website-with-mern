@@ -21,7 +21,7 @@ const AdminStore = create((set) => ({
         }))
     },
     RegisterRequest: async (reqBody) => {
-        let url = `http://localhost:5050/api/Register`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/Register`
         let res = await axios.post(url, reqBody)
         return res.data
     },
@@ -37,7 +37,7 @@ const AdminStore = create((set) => ({
         }))
     },
     LoginRequest: async (LoginFormData) => {
-        let url = `http://localhost:5050/api/Login`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/Login`
         let res = await axios.post(url, LoginFormData)
         setEmail(LoginFormData.email)
         return res.data
@@ -55,7 +55,7 @@ const AdminStore = create((set) => ({
         }))
     },
     LoginVerifyOtpRequest: async (otp) => {
-        let url = `http://localhost:5050/api/VerifyOtp`;
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/VerifyOtp`;
         let email = getEmail()
 
         let res = await axios.post(url,{email,otp});
@@ -67,7 +67,7 @@ const AdminStore = create((set) => ({
     },
     // logout request
     LogOutRequest: async () => {
-        let url = `http://localhost:5050/api/LogOut`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/LogOut`
         let res = await axios.get(url, {headers: {token : Cookies.get('token')}});
         if(res.data['status'] === "success"){
             Cookies.remove("token");

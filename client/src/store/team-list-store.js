@@ -7,7 +7,7 @@ const TeamListStore = create((set)=>({
     TeamList: null,
     TeamListReadRequest: async () => {
         set({TeamList:null})
-        let url = `http://localhost:5050/api/TeamListRead`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/TeamListRead`
         let res = await axios.get(url)
         if(res.data['status'] === "success"){
             set({TeamList: res.data.data})
@@ -18,7 +18,7 @@ const TeamListStore = create((set)=>({
     UserFilterByTeamList: null,
     UserFilterByTeamListRequest: async () => {
         try{
-            let url = `http://localhost:5050/api/UserFilterByTeamList`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/UserFilterByTeamList`
             let res = await axios.get(url,{headers: {token : Cookies.get('token')}})
             if(res.data['status'] === "success"){
                 set({UserFilterByTeamList: res.data.data})
@@ -41,7 +41,7 @@ const TeamListStore = create((set)=>({
     },
     createTeamRequest: async (reqBody) => {
         try{
-            let url = `http://localhost:5050/api/TeamListCreate`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/TeamListCreate`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             if(res.data['status'] === "success"){
                 set({teamFormData: res.data.data[0]})
@@ -55,7 +55,7 @@ const TeamListStore = create((set)=>({
 //---------------------- Remove Team Request -------------------------------
     removeTeamRequest: async (id) => {
         try {
-            let url = `http://localhost:5050/api/TeamListRemove/${id}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/TeamListRemove/${id}`
             await axios.get(url,{headers: {token : Cookies.get('token')}})
         }
         catch (err){
@@ -65,7 +65,7 @@ const TeamListStore = create((set)=>({
 // -------------------------- --- update Team request ----------------------------------
     updateTeamListRequest: async (id,reqBody) => {
         try{
-            let url = `http://localhost:5050/api/TeamListUpdate/${id}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/TeamListUpdate/${id}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             return res.data['status'] === "success"
         }

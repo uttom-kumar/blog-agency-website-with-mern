@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import toast from "react-hot-toast";
-import SliderStore from "../../../store/slider-store.jsx";
+import SliderStore from "../../../store/slider-store.js";
 
 const AdminHeroSliderCreateComponent = () => {
     const {sliderFormData,sliderOnChange,createSliderListRequest,BlogSliderListRequest,userFilterBySliderListRequest} = SliderStore()

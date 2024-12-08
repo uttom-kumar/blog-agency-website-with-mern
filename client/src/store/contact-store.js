@@ -14,7 +14,7 @@ const ContactStore = create((set)=>({
     },
 
     ContactCreateRequest: async (reqBody) => {
-        let url = `http://localhost:5050/api/CreateContact`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/CreateContact`
 
         let res = await axios.post(url,reqBody)
         return res.data['status'] === "success"

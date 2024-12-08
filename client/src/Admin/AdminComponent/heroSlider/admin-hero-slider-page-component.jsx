@@ -2,7 +2,7 @@ import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import imgT from '../../../assets/images/hero.png'
 import {Link} from "react-router-dom";
-import SliderStore from "../../../store/slider-store.jsx";
+import SliderStore from "../../../store/slider-store.js";
 import {useEffect} from "react";
 import toast from "react-hot-toast";
 

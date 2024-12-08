@@ -3,7 +3,7 @@ import HeroSlider from "../component/blogs/hero-slider.jsx";
 import {useEffect} from "react";
 import BlogListStore from "../store/blog-list-store.js";
 import BlogListComponent from "../component/blogs/blog-list-component.jsx";
-import SliderStore from "../store/slider-store.jsx";
+import SliderStore from "../store/slider-store.js";
 
 const HomePage = () => {
     const {BlogListRequest} =BlogListStore()

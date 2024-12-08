@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import BlogSliderSkeleton from "../../skeleton/blog-slider-skeleton.jsx";
-import SliderStore from "../../store/slider-store.jsx";
+import SliderStore from "../../store/slider-store.js";
 
 
 const HeroSlider = () => {

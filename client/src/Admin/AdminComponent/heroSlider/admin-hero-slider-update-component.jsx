@@ -1,4 +1,4 @@
-import SliderStore from "../../../store/slider-store.jsx";
+import SliderStore from "../../../store/slider-store.js";
 import toast from "react-hot-toast";
 import {Link, useParams} from "react-router-dom";
 import {useEffect} from "react";

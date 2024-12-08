@@ -7,7 +7,7 @@ const SliderStore = create((set)=> ({
     BlogSliderList: null,
     BlogSliderListRequest: async () => {
         set({BlogSliderList: null})
-        let url = `http://localhost:5050/api/ReadBlogSlider`
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/ReadBlogSlider`
         let res = await axios.get(url)
         if(res.data['status'] === "success"){
             set({BlogSliderList: res.data.data})
@@ -18,7 +18,7 @@ const SliderStore = create((set)=> ({
     userFilterBySliderList: null,
     userFilterBySliderListRequest: async () => {
         try{
-            let url = `http://localhost:5050/api/UserFilterBySliderList`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/UserFilterBySliderList`
             let res = await axios.get(url,{headers: {token : Cookies.get('token')}})
             console.log(res)
             if(res.data['status'] === "success"){
@@ -43,7 +43,7 @@ const SliderStore = create((set)=> ({
     },
     createSliderListRequest: async (reqBody) => {
         try{
-            let url = `http://localhost:5050/api/CreateBlogSlider`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/CreateBlogSlider`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             if(res.data['status'] === "success"){
                 set({sliderFormData: res.data.data[0]})
@@ -59,7 +59,7 @@ const SliderStore = create((set)=> ({
 //---------------------- Remove Slider Request -------------------------------
     removeSliderRequest: async (id) => {
         try {
-            let url = `http://localhost:5050/api/RemoveBlogSlider/${id}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/RemoveBlogSlider/${id}`
             await axios.get(url,{headers: {token : Cookies.get('token')}})
         }
         catch (err){
@@ -69,7 +69,7 @@ const SliderStore = create((set)=> ({
 // ------------------ update slider request --------------------
     updateSliderListRequest: async (id,reqBody) => {
         try{
-            let url = `http://localhost:5050/api/UpdateBlogSlider/${id}`
+            let url = `https://blog-agency-website-with-mern.vercel.app/api/UpdateBlogSlider/${id}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
             return res.data['status'] === "success"
         }
