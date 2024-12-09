@@ -12,7 +12,7 @@ export function unauthorized(code){
     if(code===401){
         sessionStorage.clear();
         localStorage.clear();
-        window.location.href="/auth/admin/login"
+        window.location.href="/auth/admin/sub-login"
     }
 }
 

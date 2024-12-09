@@ -27,6 +27,7 @@ import AdminServicePage from "./Admin/AdminComponent/Admin-Pages/admin-service-p
 import AdminServiceCreatePage from "./Admin/AdminComponent/Admin-Pages/admin-service-create-page.jsx";
 import AdminServiceUpdatePage from "./Admin/AdminComponent/Admin-Pages/admin-service-update-page.jsx";
 import NoFoundPage from "./pages/noFoundPage.jsx";
+import UserLogin from "./component/user/user-login.jsx";
 
 
 
@@ -64,6 +65,7 @@ const App = (props) => {
 
                     <Route path={"/auth/admin/register"} element={<AdminRegisterPage />}/>
                     <Route path={"/auth/admin/login"} element={<AdminLoginPage />}/>
+                    <Route path={"/auth/admin/sub-login"} element={<UserLogin />}/>
                     <Route path={"/auth/admin/loginVerifyOtp"} element={<AdminLoginVerifyOtpPage />}/>
                     <Route path={"/auth/admin/emailVerify"} element={<AdminRecoverEmailComponent />}/>
                     <Route path={"/auth/admin/otpVerify"} element={<AdminOtpVerifyComponent />}/>

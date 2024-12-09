@@ -13,7 +13,7 @@ const AdminDashboard = () => {
     const logoutButton =async () => {
         let res = await LogOutRequest()
         if(res === true) {
-            navigate('/auth/admin/login')
+            navigate('/auth/admin/sub-login')
             toast.success("Log Out successfully!");
         }
     }

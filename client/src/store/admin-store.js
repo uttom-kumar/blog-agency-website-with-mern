@@ -42,7 +42,11 @@ const AdminStore = create((set) => ({
         setEmail(LoginFormData.email)
         return res.data
     },
-
+    subAdminFormRequest: async (reqBody) => {
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/subAdminLogin`
+        let res = await axios.post(url, reqBody)
+        return res.data
+    },
 
     // Otp verify
     OtpFormData: {otp:""},
@@ -73,7 +77,7 @@ const AdminStore = create((set) => ({
             Cookies.remove("token");
         }
         return res.data['status'] === "success"
-    }
+    },
 
 }))
 export default AdminStore
