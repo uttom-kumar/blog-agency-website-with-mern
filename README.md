@@ -2,6 +2,6 @@
 🔴Frontend live Link: https://blog-agency-website-with-mern-7kqy.vercel.app
 🔴Backend live Link: https://blog-agency-website-with-mern.vercel.app/api/BlogRead
 
-🔴Dashboard Link   https://blog-agency-website-with-mern-7kqy.vercel.app/auth/admin/login
+🔴Dashboard Link   https://blog-agency-website-with-mern-7kqy.vercel.app/auth/admin/dashboard
 email : uttom00781@gmail.com
 password : 123456
