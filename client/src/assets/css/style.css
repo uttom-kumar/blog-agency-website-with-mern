@@ -60,16 +60,6 @@ a{
     width: 100% !important;
     height: 400px !important;
 }
-.carousel-control-next,
-.carousel-control-prev{
-    height: 80px !important;
-    width: 50px !important;
-    border-radius: 10px !important;
-    background-color: rgba(0,0,0,0.4) !important;
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%);
-}
 
 
 .details_img{
@@ -107,22 +97,10 @@ a{
 }
 
 
-.slick-prev{
-    left: -50px !important;
-}
-.slick-next{
-    right: -10px !important;
-}
-.slick-prev,
-.slick-next{
-    height: 0 !important;
-    width: 0 !important;
-    background: transparent !important;
-}
-.slick-next:before,
-.slick-prev:before{
-    font-size: 50px !important ;
-    color: aqua !important ;
+/* Customize the Previous Button */
+.slick-prev:before, .slick-next:before{
+    font-size: 40px !important;
+    color: #ADB5BD !important;
 }
 
 
@@ -189,10 +167,6 @@ a{
 
 
 @media (max-width: 992px) {
-    .carousel-control-next,
-    .carousel-control-prev{
-        display: none !important;
-    }
     .Slider_order1{
         order: 1;
         width: 100% !important;
