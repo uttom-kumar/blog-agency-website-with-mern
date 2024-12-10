@@ -1,26 +1,34 @@
 import {Link} from "react-router-dom";
 import toast from "react-hot-toast";
 import ServiceListStore from "../../../store/service-list-store.js";
+import {useState} from "react";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
 
 
 
 const AdminServiceCreateComponent = () => {
+    const [loading, setLoading] = useState('d-none');
     const{serviceFormData,serviceOnChange,createServiceRequest,userFilterByServiceListRequest,ServiceListReadRequest} = ServiceListStore()
 
 
 
     const CreateBlogListButton =async ()=>{
+        setLoading('d-block');
         if (!serviceFormData?.image || !serviceFormData?.title || !serviceFormData?.des) {
+            setLoading('d-none');
             return toast.error("All fields are required!");
         }
         if(serviceFormData?.des.length !== 250) {
+            setLoading('d-none');
             return toast.error("enter up to 250 words")
         }
         let res = await createServiceRequest(serviceFormData)
 
         if(res === true) {
+            setLoading('d-block');
             await ServiceListReadRequest()
             await userFilterByServiceListRequest()
+            setLoading('d-none')
             toast.success("Create new blog list");
             serviceOnChange('image', "");
             serviceOnChange('title', "");
@@ -28,6 +36,7 @@ const AdminServiceCreateComponent = () => {
         }
 
         else{
+            setLoading('d-none');
             toast.error("blog list creation  failed");
         }
 
@@ -42,6 +51,9 @@ const AdminServiceCreateComponent = () => {
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container-fluid py-3">
                 <div className="">
                     <div>

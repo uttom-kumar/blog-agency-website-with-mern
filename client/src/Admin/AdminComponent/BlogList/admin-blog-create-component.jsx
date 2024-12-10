@@ -1,29 +1,36 @@
 import {Link} from "react-router-dom";
 import toast from "react-hot-toast";
 import BlogListStore from "../../../store/blog-list-store.js";
+import {useState} from "react";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
 
 
 
 
 const AdminBlogCreateComponent = () => {
     const {BlogFormData,BlogOnChange,BlogListCreateRequest,BlogListFilterByAdminRequest,BlogListRequest} = BlogListStore()
-
+    const [loading, setLoading] = useState('d-none');
 
     const CreateBlogListButton =async ()=>{
+        setLoading('d-block');
         if(BlogFormData?.des.length < 500) {
+            setLoading('d-none');
             return toast.error("enter up to 500 words")
         }
         let res = await BlogListCreateRequest(BlogFormData)
-
+        setLoading('d-none');
         if(res === true) {
+            setLoading('d-block')
             await BlogListRequest()
             await BlogListFilterByAdminRequest()
+            setLoading('d-none');
             toast.success("Create new blog list");
             BlogOnChange('img', "");
             BlogOnChange('title', "");
             BlogOnChange('des', "");
         }
         else{
+            setLoading('d-none');
             toast.error("blog list creation  failed");
         }
 
@@ -37,6 +44,9 @@ const AdminBlogCreateComponent = () => {
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container-fluid py-3">
                 <div className="">
                     <div>

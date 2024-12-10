@@ -101,7 +101,7 @@ export const BlogRemoveService = async (req) => {
         let user_id = req.headers.user_id
         let blogID = req.params.blogID
 
-        let data= await BlogModel.deleteOne({_id: blogID, userID:user_id})
+        let data= await BlogModel.deleteOne({_id: blogID})
 
         return {
             status: "success",

@@ -1,39 +1,58 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import toast from "react-hot-toast";
 import TeamListStore from "../../../store/team-list-store.js";
+import FormSkeleton from "../../../skeleton/form-skeleton.jsx";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
 
 const AdminTeamUpdateComponent = () => {
+    const [loading, setLoading] = useState('d-none');
+    const [ladingSkeleton,setLoadingSkeleton] = useState(true);
     const {UpdateTeamFormData, UpdateTeamOnChange, updateTeamListRequest, UserFilterByTeamListRequest,
         SingleTeamListReadRequest} = TeamListStore();
+
+
 
     const{id} = useParams();
 
     useEffect(() => {
         (async () => {
+            setLoadingSkeleton(true);
             await SingleTeamListReadRequest(id)
             await UserFilterByTeamListRequest()
+            setLoadingSkeleton(false);
         })()
     }, [id]);
 
     const UpdateTeamListButton =async () => {
+        setLoading('d-block')
         let {description} = UpdateTeamFormData
         if( description.length !== 200){
+            setLoading('d-none')
             return toast.error("Description Can't pay more than 200 or less than 200")
         }
         let res = await updateTeamListRequest(id,UpdateTeamFormData)
         if(res === true){
+            setLoading('d-block')
             await UserFilterByTeamListRequest()
+            setLoading('d-none')
             toast.success("Update TeamList");
         }
         else{
+            setLoading('d-none')
             toast.error("Updated failed TeamList");
         }
     }
 
+    if(ladingSkeleton){
+        return <FormSkeleton />
+    }
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container-fluid py-3">
                 <div className="">
                     <div>
@@ -42,7 +61,7 @@ const AdminTeamUpdateComponent = () => {
                     </div>
                     <div className="my-4 mx-auto col-lg-8 bg-white rounded shadow">
                         <h5 className="text-center pt-4">Update Team List</h5>
-                        <form className="p-3">
+                        <form className={`p-3`}>
                             <input className="form-control mb-3"
                                    type="text" placeholder="Enter Cloudinary or ImgBB image URL"
                                    value={UpdateTeamFormData?.image}

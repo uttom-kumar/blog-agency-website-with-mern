@@ -1,24 +1,33 @@
 import {Link} from "react-router-dom";
 import toast from "react-hot-toast";
 import SliderStore from "../../../store/slider-store.js";
+import {useState} from "react";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
 
 const AdminHeroSliderCreateComponent = () => {
+    const [loading, setLoading] = useState('d-none');
     const {sliderFormData,sliderOnChange,createSliderListRequest,BlogSliderListRequest,userFilterBySliderListRequest} = SliderStore()
 
 
 
     const CreateSliderListButton = async () => {
+        setLoading('d-block')
         const { heading, title, image, description } = sliderFormData;
         if(!heading || !title || !image) {
+            setLoading('d-none')
             return toast.error("Please fill in all required fields")
         }
         if(description.length < 50) {
+            setLoading('d-none')
             return toast.error("Description must be at least 50 characters long.")
         }
+        setLoading('d-block')
         let res = await createSliderListRequest(sliderFormData)
+
         if(res === true){
             await BlogSliderListRequest()
             await userFilterBySliderListRequest()
+            setLoading('d-none')
             toast.success("Create Slider List");
             sliderOnChange('image', "");
             sliderOnChange('heading', "");
@@ -37,6 +46,9 @@ const AdminHeroSliderCreateComponent = () => {
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container-fluid py-3">
                 <div className="">
                     <div>

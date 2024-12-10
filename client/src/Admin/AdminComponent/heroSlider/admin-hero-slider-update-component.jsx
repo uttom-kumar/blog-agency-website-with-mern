@@ -1,9 +1,13 @@
 import SliderStore from "../../../store/slider-store.js";
 import toast from "react-hot-toast";
 import {Link, useParams} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
+import FormSkeleton from "../../../skeleton/form-skeleton.jsx";
 
 const AdminHeroSliderUpdateComponent = () => {
+    const [loading, setLoading] = useState('d-none');
+    const [loadingSkeleton,setLoadingSkeleton] = useState(true);
     const {UpdateSliderFormData, UpdateSliderOnChange, BlogSliderListRequest,
         userFilterBySliderListRequest, updateSliderListRequest, SingleSliderListReadRequest} = SliderStore()
 
@@ -11,22 +15,36 @@ const AdminHeroSliderUpdateComponent = () => {
 
     useEffect(() => {
         (async () => {
+            setLoadingSkeleton(true);
             await SingleSliderListReadRequest(id)
             await userFilterBySliderListRequest()
+            setLoadingSkeleton(false);
         })()
     }, [id]);
 
     const UpdateSliderListButton = async () => {
-
+        setLoading('d-block')
         let res = await updateSliderListRequest(id,UpdateSliderFormData)
         if(res === true){
             await BlogSliderListRequest()
             await userFilterBySliderListRequest()
+            setLoading('d-none')
             toast.success("Update Slider List");
         }
     }
+
+
+
+    if(loadingSkeleton){
+        return <FormSkeleton />
+    }
+
+
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container-fluid py-3">
                 <div className="">
                     <div>

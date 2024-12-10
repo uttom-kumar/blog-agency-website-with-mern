@@ -2,9 +2,11 @@ import {Link, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import {useState} from "react";
 import AdminStore from "../../../store/admin-store.js";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
 
 
 const AdminLoginComponent = () => {
+    const [loading, setLoading] = useState('d-none');
     const [error ,setError] = useState("");
     const {LoginFormData,LoginOnChange,LoginRequest} = AdminStore()
     let navigate = useNavigate();
@@ -13,24 +15,31 @@ const AdminLoginComponent = () => {
     const SubmitButton =async (e) => {
         e.preventDefault();
         try{
+            setLoading('d-block')
             let res = await LoginRequest(LoginFormData)
             if(res["status"] === "success"){
                 navigate("/auth/admin/loginVerifyOtp")
+                setLoading('d-none');
                 toast.success("check your email sent 6 digits otp code");
             }
             else{
                 if(res['status']==="failed"){
+                    setLoading('d-none');
                     setError(res['message'])
                 }
             }
         }
         catch (err){
+            setLoading('d-none');
             toast.error("some thing went wrong!");
         }
     }
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container">
                 <div className="mx-auto my-5 pt-5 col-lg-4 col-md-8 col-sm-12 col-12">
                     <div className="p-3 bg-white rounded shadow">

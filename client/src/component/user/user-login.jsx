@@ -3,34 +3,45 @@ import toast from 'react-hot-toast'
 import {useState} from "react";
 import AdminStore from "../../store/admin-store.js";
 import Cookies from "js-cookie";
+import LoadingSkeleton from "../../skeleton/Loading-skeleton.jsx";
 
 const UserLogin = () => {
     const {LoginFormData,LoginOnChange,subAdminFormRequest} = AdminStore()
+    const[loading,setLoading] = useState('d-none');
     const[error, setError] = useState("");
+
     const navigate = useNavigate();
+
     const SubmitButton =async (e) => {
         e.preventDefault();
         try{
+            setLoading('d-block');
             let res = await subAdminFormRequest(LoginFormData)
-            console.log(res)
+
             if(res["status"] === "success"){
                 Cookies.set('token', res.token)
                 navigate("/auth/admin/dashboard");
+                setLoading('d-none');
                 toast.success("logged in successfully!");
             }
             else{
                 if(res['status']==="failed"){
+                    setLoading("d-none");
                     setError(res['message'])
                 }
             }
         }
         catch (err){
+            setLoading('d-none');
             toast.error("some thing went wrong!");
         }
     }
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton/>
+            </div>
             <div className="container ">
                 <div className="mx-auto my-5 pt-5 col-lg-4 col-md-8 col-sm-12 col-12">
                     <div className="p-3 bg-white rounded shadow">

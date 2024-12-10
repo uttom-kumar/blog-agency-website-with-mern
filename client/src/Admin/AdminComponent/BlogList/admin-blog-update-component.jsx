@@ -1,10 +1,14 @@
 import {Link, useParams} from "react-router-dom";
 import toast from "react-hot-toast";
 import BlogListStore from "../../../store/blog-list-store.js";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
+import FormSkeleton from "../../../skeleton/form-skeleton.jsx";
 
 
 const AdminBlogUpdateComponent = () => {
+    const [loading, setLoading] = useState('d-none');
+    const [loadingSkeleton,setLoadingSkeleton] = useState(true);
     const {UpdateBlogFormData,UpdateBlogOnChange,BlogListFilterByAdminRequest,
         BlogUpdateRequest,SingleBlogReadRequest,BlogListRequest} = BlogListStore()
 
@@ -12,29 +16,41 @@ const AdminBlogUpdateComponent = () => {
 
     useEffect(() => {
         (async () =>{
+            setLoadingSkeleton(true);
             await BlogListRequest()
             await BlogListFilterByAdminRequest()
             await SingleBlogReadRequest(blogID)
+            setLoadingSkeleton(false);
         })()
     }, [blogID]);
 
     const UpdateBlogListButton =async ()=>{
+        setLoading('d-block')
         let res = await BlogUpdateRequest(blogID,UpdateBlogFormData)
 
         if(res === true) {
             await BlogListFilterByAdminRequest()
+            setLoading('d-none')
             toast.success("Create new blog list");
         }
         else{
+            setLoading('d-none')
             toast.error("blog list creation  failed");
         }
 
     }
 
 
+    if(loadingSkeleton){
+        return <FormSkeleton />
+    }
+
 
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container-fluid py-3">
                 <div className="">
                     <div>

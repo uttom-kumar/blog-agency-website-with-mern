@@ -1,16 +1,26 @@
 import {Link, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
+import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
+import {useState} from "react";
 
 const AdminForgetPasswordComponent = () => {
+    const [loading, setLoading] = useState('d-none');
     let navigate = useNavigate();
 
     const SubmitButton = (e) => {
         e.preventDefault();
+        setLoading('d-block');
         navigate(`/auth/admin/resetPassword`);
+        setLoading('d-none');
         toast.success("Recover email added successfully.");
     }
+
+
     return (
         <div>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container">
                 <div className="mx-auto my-5 pt-5 col-lg-4 col-md-8 col-sm-12 col-12">
                     <div className="p-3 bg-white rounded shadow">
