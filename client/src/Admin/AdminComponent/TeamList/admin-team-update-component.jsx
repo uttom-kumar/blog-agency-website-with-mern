@@ -45,21 +45,21 @@ const AdminTeamUpdateComponent = () => {
                         <form className="p-3">
                             <input className="form-control mb-3"
                                    type="text" placeholder="Enter Cloudinary or ImgBB image URL"
-                                   defaultValue={teamFormData?.image}
+                                   value={teamFormData?.image}
                                    onChange={(e) => {
                                        teamOnChange('image', e.target.value)
                                    }}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your name"
-                                   defaultValue={teamFormData?.name}
+                                   value={teamFormData?.name}
                                    onChange={(e) => {
                                        teamOnChange('name', e.target.value)
                                    }}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your position"
-                                   defaultValue={teamFormData?.position}
+                                   value={teamFormData?.position}
                                    onChange={(e) => {
                                        teamOnChange('position', e.target.value)
                                    }}
@@ -69,7 +69,7 @@ const AdminTeamUpdateComponent = () => {
                             >Characters Count {teamFormData.bio.length}</p>
                             <textarea className=" mb-3 form-control"
                                    rows={2} placeholder="Enter your bio"
-                                   defaultValue={teamFormData?.bio}
+                                   value={teamFormData?.bio}
                                    onChange={(e) => {
                                        teamOnChange('bio', e.target.value)
                                    }}
@@ -79,7 +79,7 @@ const AdminTeamUpdateComponent = () => {
                             >Characters Count {teamFormData.description.length}</p>
                             <textarea className=" my-2 form-control"
                                       rows={4} placeholder="Enter up to 200 characters"
-                                      defaultValue={teamFormData?.description}
+                                      value={teamFormData?.description}
                                       onChange={(e) => {
                                           teamOnChange('description', e.target.value)
                                       }}
