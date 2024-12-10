@@ -1,7 +1,7 @@
 import {
     CreateService,
     ReadService,
-    RemoveService,
+    RemoveService, SingleReadService,
     UpdateService,
     UserFilterByServiceListService
 } from "../services/Services.js";
@@ -13,6 +13,10 @@ export const CreateServiceController = async (req, res) => {
     return res.json(result)
 }
 
+export const SingleReadServiceController = async (req, res) => {
+    let result = await SingleReadService(req)
+    return res.json(result)
+}
 export const ReadServiceController = async (req, res) => {
     let result = await ReadService(req)
     return res.json(result)

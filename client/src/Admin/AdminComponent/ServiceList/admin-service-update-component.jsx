@@ -1,14 +1,17 @@
-import React, {useEffect} from 'react';
+import  {useEffect} from 'react';
 import {Link, useParams} from "react-router-dom";
 import toast from "react-hot-toast";
 import ServiceListStore from "../../../store/service-list-store.js";
 
 const AdminServiceUpdateComponent = () => {
-    const {serviceFormData,serviceOnChange,updateServiceRequest,ServiceListReadRequest,userFilterByServiceListRequest} = ServiceListStore()
+    const {serviceFormData,serviceOnChange,updateServiceRequest,ServiceListReadRequest,
+        userFilterByServiceListRequest, SingleServiceListReadRequest} = ServiceListStore()
 
     const{id} = useParams();
+
     useEffect(() => {
         (async () => {
+            await SingleServiceListReadRequest(id)
             await ServiceListReadRequest()
             await userFilterByServiceListRequest()
         })()
@@ -35,7 +38,7 @@ const AdminServiceUpdateComponent = () => {
             <div className="container-fluid py-3">
                 <div className="">
                     <div>
-                        <Link className="text-dark fw-bold" to={`/auth/admin/blog`}>Service page</Link>
+                        <Link className="text-dark fw-bold" to={`/auth/admin/service`}>Service page</Link>
                         /<Link className="text-dark" to={`/auth/admin/dashboard`}>Dashboard</Link>
                     </div>
                     <div className="my-4 mx-auto col-lg-8 bg-white rounded shadow">

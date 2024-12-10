@@ -1,7 +1,7 @@
 import {
     CreateBlogSliderServices,
     ReadBlogSliderServices,
-    RemoveBlogSliderServices, UpdateBlogSliderServices, UserFilterBySliderListService
+    RemoveBlogSliderServices, SingleSliderListService, UpdateBlogSliderServices, UserFilterBySliderListService
 } from "../services/BlogSliderService.js";
 
 
@@ -9,6 +9,12 @@ export const CreateBlogSlider = async (req, res) => {
     let result = await CreateBlogSliderServices(req)
     return res.json(result)
 }
+
+export const SingleSliderList = async (req, res) => {
+    let result = await SingleSliderListService(req)
+    return res.json(result)
+}
+
 
 export const ReadBlogSlider = async (req, res) => {
     let result = await ReadBlogSliderServices(req)

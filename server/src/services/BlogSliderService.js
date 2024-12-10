@@ -1,4 +1,5 @@
 import {SliderModel} from "../models/SliderModel.js";
+import {BlogModel} from "../models/BlogModel.js";
 
 export const CreateBlogSliderServices =async (req) => {
     try{
@@ -18,6 +19,31 @@ export const CreateBlogSliderServices =async (req) => {
             status: "failed",
             message: "some thing went wrong",
             error: err.toString()
+        }
+    }
+}
+
+export const SingleSliderListService =async (req) => {
+    try {
+        let id = req.params.id
+        let data = await SliderModel.findOne({ _id: id })
+        if(!data) {
+            return {
+                status: "failed",
+                message: "Blog not found"
+            }
+        }
+        return {
+            status: "success",
+            message: "single read blog service successfully",
+            data : data
+        }
+    }
+    catch (error) {
+        return{
+            status: "failed",
+            message: "failed single read blog service",
+            error: error.toString()
         }
     }
 }

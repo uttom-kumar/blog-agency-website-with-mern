@@ -3,7 +3,7 @@ import {
     BlogRemoveService,
     BlogUpdateService,
     CreateBlogService,
-    ReadBlogService, UserFilterByBlogListService,
+    ReadBlogService, SingleBlogReadService, UserFilterByBlogListService,
 } from "../services/BlogService.js";
 
 
@@ -14,6 +14,10 @@ export const BlogCreate = async (req, res) => {
 
 export const BlogRead = async (req, res) => {
     let result = await ReadBlogService(req);
+    return res.json(result);
+}
+export const SingleBlogRead = async (req, res) => {
+    let result = await SingleBlogReadService(req);
     return res.json(result);
 }
 export const BlogRemove = async (req, res) => {

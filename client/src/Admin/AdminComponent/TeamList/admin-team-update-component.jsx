@@ -4,10 +4,14 @@ import toast from "react-hot-toast";
 import TeamListStore from "../../../store/team-list-store.js";
 
 const AdminTeamUpdateComponent = () => {
-    const {teamFormData,teamOnChange,updateTeamListRequest,UserFilterByTeamListRequest,TeamListReadRequest} = TeamListStore()
+    const {teamFormData,teamOnChange,updateTeamListRequest,UserFilterByTeamListRequest,
+        TeamListReadRequest,SingleTeamListReadRequest} = TeamListStore();
+
     const{id} = useParams();
+
     useEffect(() => {
         (async () => {
+            await SingleTeamListReadRequest(id)
             await TeamListReadRequest()
             await UserFilterByTeamListRequest()
         })()

@@ -13,7 +13,13 @@ const SliderStore = create((set)=> ({
             set({BlogSliderList: res.data.data})
         }
     },
-
+    SingleSliderListReadRequest: async (id) => {
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleSliderList/${id}`
+        let res = await axios.get(url);
+        if(res.data['status']==="success"){
+            set({sliderFormData: res.data.data})
+        }
+    },
 // ---------------- userFilter By SliderList Request ------------------------
     userFilterBySliderList: null,
     userFilterBySliderListRequest: async () => {

@@ -23,6 +23,31 @@ export const CreateService = async (req) => {
     }
 }
 
+export const SingleReadService = async (req) => {
+    try {
+        let id = req.params.id
+        let data = await ServiceModel.findOne({ _id: id })
+        if(!data) {
+            return {
+                status: "failed",
+                message: "Blog not found"
+            }
+        }
+        return {
+            status: "success",
+            message: "single read blog service successfully",
+            data : data
+        }
+    }
+    catch (error) {
+        return{
+            status: "failed",
+            message: "failed single read blog service",
+            error: error.toString()
+        }
+    }
+}
+
 export const ReadService = async (req) => {
     try{
         let data = await ServiceModel.find()

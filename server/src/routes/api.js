@@ -17,9 +17,10 @@ import {
     BlogCreate, BlogDetails,
     BlogRead,
     BlogRemove,
-    BlogUpdate, UserFilterByBlogList
+    BlogUpdate, SingleBlogRead, UserFilterByBlogList
 } from "../controllers/BlogController.js";
 import {
+    SingleTeamListRead,
     TeamListCreate,
     TeamListRead,
     TeamListRemove,
@@ -29,7 +30,7 @@ import {
 import {
     CreateBlogSlider,
     ReadBlogSlider,
-    RemoveBlogSlider,
+    RemoveBlogSlider, SingleSliderList,
     UpdateBlogSlider, UserFilterBySliderList
 } from "../controllers/BlogSliderController.js";
 import {CreateContact, ReadContact} from "../controllers/ContactController.js";
@@ -37,7 +38,7 @@ import {ReadContactService} from "../services/ContactService.js";
 import {
     CreateServiceController,
     ReadServiceController,
-    RemoveServiceController, UpdateServiceController, UserFilterByServiceList
+    RemoveServiceController, SingleReadServiceController, UpdateServiceController, UserFilterByServiceList
 } from "../controllers/ServiceController.js";
 
 
@@ -57,6 +58,7 @@ router.post('/ResetPassword',ResetPassword)
 
 //blog related api
 router.post("/BlogCreate",AuthMiddleware , BlogCreate)
+router.get("/SingleBlogRead/:id", SingleBlogRead)
 router.get("/BlogRead", BlogRead)
 router.delete("/BlogRemove/:blogID",AuthMiddleware ,BlogRemove)
 router.post("/BlogUpdate/:blogID", AuthMiddleware, BlogUpdate)
@@ -68,6 +70,7 @@ router.get("/UserFilterByBlogList",AuthMiddleware, UserFilterByBlogList)
 
 //blog hero / slider related api
 router.post("/CreateBlogSlider",AuthMiddleware,CreateBlogSlider)
+router.get("/SingleSliderList/:id", SingleSliderList)
 router.get("/ReadBlogSlider",ReadBlogSlider)
 router.get("/RemoveBlogSlider/:id",AuthMiddleware,RemoveBlogSlider)
 router.post("/UpdateBlogSlider/:id",AuthMiddleware, UpdateBlogSlider)
@@ -75,12 +78,14 @@ router.get("/UserFilterBySliderList",AuthMiddleware, UserFilterBySliderList)
 
 // Blog admin Team List
 router.post("/TeamListCreate", AuthMiddleware,TeamListCreate)
+router.get("/SingleTeamListRead/:id", SingleTeamListRead)
 router.get("/TeamListRead", TeamListRead)
 router.get("/TeamListRemove/:id", AuthMiddleware,TeamListRemove)
 router.post("/TeamListUpdate/:teamID", AuthMiddleware,TeamListUpdate)
 router.get("/UserFilterByTeamList",AuthMiddleware, UserFilterByTeamList)
 // Service Section
 router.post("/CreateService", AuthMiddleware,CreateServiceController)
+router.get("/SingleReadServiceController/:id",SingleReadServiceController)
 router.get("/ReadService",ReadServiceController)
 router.get("/RemoveService/:id",AuthMiddleware,RemoveServiceController)
 router.post("/UpdateService/:serviceID",AuthMiddleware,UpdateServiceController)

@@ -21,9 +21,16 @@ const BlogListStore = create((set)=>({
             set({BlogListDetails: res.data.data})
         }
     },
+    // ----------single blog list request ------------------------------------
+    SingleBlogReadRequest: async (blogID) => {
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleBlogRead/${blogID}`
+        let res = await axios.get(url);
+        if(res.data['status']==="success"){
+            set({BlogFormData: res.data.data})
+        }
+    },
 
-
-    // Create Blog list
+    // -------------Create Blog list ---------------------------------------
     BlogFormData: {title:"", des:"", img:""},
     BlogOnChange: (name, value) => {
         set((state)=>({
@@ -58,6 +65,7 @@ const BlogListStore = create((set)=>({
             unauthorized(err.response.status);
         }
     },
+
 
     //blogList filter by user
     BlogListFilterAdmin:null,

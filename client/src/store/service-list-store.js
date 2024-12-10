@@ -13,6 +13,14 @@ const ServiceListStore = create((set)=>({
             set({ServiceList: res.data.data})
         }
     },
+    // ----------single service list request --------------------------------------
+    SingleServiceListReadRequest: async (id) => {
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleReadServiceController/${id}`
+        let res = await axios.get(url);
+        if(res.data['status']==="success"){
+            set({serviceFormData: res.data.data})
+        }
+    },
 // ----------------------------- usr filter by service request ----------------------
     userFilterByServiceList: null,
     userFilterByServiceListRequest: async () => {

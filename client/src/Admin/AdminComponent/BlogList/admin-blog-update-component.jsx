@@ -5,12 +5,14 @@ import {useEffect} from "react";
 
 
 const AdminBlogUpdateComponent = () => {
-    const {BlogFormData,BlogOnChange,BlogListFilterByAdminRequest,BlogUpdateRequest} = BlogListStore()
+    const {BlogFormData,BlogOnChange,BlogListFilterByAdminRequest,
+        BlogUpdateRequest,SingleBlogReadRequest} = BlogListStore()
 
     const {blogID} = useParams();
 
     useEffect(() => {
         (async () =>{
+            await SingleBlogReadRequest(blogID)
             await BlogListFilterByAdminRequest()
         })()
     }, [blogID]);
@@ -51,7 +53,7 @@ const AdminBlogUpdateComponent = () => {
                                    onChange={(e) => {BlogOnChange('title',e.target.value)}}
                             />
                             <textarea className=" my-2 form-control"
-                                      rows={4}  placeholder="Enter up to 400 words"
+                                      rows={12}  placeholder="Enter up to 400 words"
                                       defaultValue={BlogFormData?.des}
                                       onChange={(e) => {BlogOnChange('des',e.target.value)}}
                             />

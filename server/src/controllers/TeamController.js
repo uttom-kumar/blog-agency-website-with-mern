@@ -1,4 +1,5 @@
 import {
+    SingleTeamListReadService,
     TeamListCreateService,
     TeamListReadService,
     TeamListRemoveService,
@@ -8,6 +9,11 @@ import {
 
 export const TeamListCreate = async (req, res) => {
     let result = await TeamListCreateService(req);
+    return res.json(result);
+}
+
+export const SingleTeamListRead = async (req, res) => {
+    let result = await SingleTeamListReadService(req);
     return res.json(result);
 }
 

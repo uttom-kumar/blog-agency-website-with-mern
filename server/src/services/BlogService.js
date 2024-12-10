@@ -28,6 +28,31 @@ export const CreateBlogService = async (req) => {
     }
 }
 
+export const SingleBlogReadService = async (req) => {
+    try {
+        let id = req.params.id
+        let data = await BlogModel.findOne({ _id: id })
+        if(!data) {
+            return {
+                status: "failed",
+                message: "Blog not found"
+            }
+        }
+        return {
+            status: "success",
+            message: "single read blog service successfully",
+            data : data
+        }
+    }
+    catch (error) {
+        return{
+            status: "failed",
+            message: "failed single read blog service",
+            error: error.toString()
+        }
+    }
+}
+
 export const ReadBlogService = async (req) => {
     try{
         let joinWithUserStage = {

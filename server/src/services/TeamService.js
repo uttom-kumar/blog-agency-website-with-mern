@@ -24,6 +24,31 @@ export const TeamListCreateService = async (req) => {
     }
 }
 
+export const SingleTeamListReadService = async (req) => {
+    try {
+        let id = req.params.id
+        let data = await TeamModel.findOne({ _id: id })
+        if(!data) {
+            return {
+                status: "failed",
+                message: "Blog not found"
+            }
+        }
+        return {
+            status: "success",
+            message: "single read blog service successfully",
+            data : data
+        }
+    }
+    catch (error) {
+        return{
+            status: "failed",
+            message: "failed single read blog service",
+            error: error.toString()
+        }
+    }
+}
+
 export const TeamListReadService = async (req) => {
     try{
         let data = await TeamModel.find()

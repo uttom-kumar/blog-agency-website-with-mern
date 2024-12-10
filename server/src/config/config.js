@@ -1,4 +1,4 @@
-export const PORT = 5050
+export const PORT = 5040
 export const DATABASE = "mongodb+srv://uttomkumar00779:JP1d7SDNWwKewdfE1a2dfas@cluster0.rduqkqc.mongodb.net/Blog-agency-website"
 export const JWT_KEY =  "ABC123412341234"
 export const JWT_EXPIRE_TIME = 30*24*60*60

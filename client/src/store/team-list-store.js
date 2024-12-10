@@ -13,7 +13,13 @@ const TeamListStore = create((set)=>({
             set({TeamList: res.data.data})
         }
     },
-
+    SingleTeamListReadRequest: async (id) => {
+        let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleTeamListRead/${id}`
+        let res = await axios.get(url);
+        if(res.data['status']==="success"){
+            set({teamFormData: res.data.data})
+        }
+    },
 // ----------------------------- usr filter by service request ----------------------
     UserFilterByTeamList: null,
     UserFilterByTeamListRequest: async () => {

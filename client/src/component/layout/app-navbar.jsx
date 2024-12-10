@@ -53,7 +53,6 @@ const AppNavbar = () => {
                     >
                         <span className="navbar-toggler-icon"/>
                     </button>
-
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <form className="d-flex m-auto mt-lg-0 mt-md-3 mt-sm-3 mt-3" onSubmit={searchBtn}>
                             <input className="form-control me-2" type="search" placeholder="Search"

@@ -21,7 +21,7 @@ const BlogDetails = () => {
             <div className="container my-5">
                 {
                     BlogListDetails?.map((item, i) => {
-                        console.log(item)
+                        
                         return (
                             <div className="card py-4" key={i}>
                                 <div className=" col-lg-6 col-md-8 col-sm-12 col-12 mx-auto">

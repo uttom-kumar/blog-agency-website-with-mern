@@ -4,13 +4,15 @@ import {Link, useParams} from "react-router-dom";
 import {useEffect} from "react";
 
 const AdminHeroSliderUpdateComponent = () => {
-    const {sliderFormData,sliderOnChange,BlogSliderListRequest,userFilterBySliderListRequest,updateSliderListRequest} = SliderStore()
+    const {sliderFormData,sliderOnChange,BlogSliderListRequest,
+        userFilterBySliderListRequest,updateSliderListRequest,SingleSliderListReadRequest} = SliderStore()
 
     const {id} = useParams();
 
     useEffect(() => {
         (async () => {
-           await userFilterBySliderListRequest()
+            await SingleSliderListReadRequest(id)
+            await userFilterBySliderListRequest()
         })()
     }, [id]);
 
