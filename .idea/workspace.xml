@@ -5,34 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/skeleton/form-skeleton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/skeleton/table-skeleton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-forget-password-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-forget-password-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-login-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-login-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-login-verify-otp-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-login-verify-otp-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-otpVerify-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-otpVerify-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-recover-email-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-recover-email-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-register-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-register-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-home/admin-home-page-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-home/admin-home-page-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-create-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-create-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-page-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-page-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-update-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-create-Component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-create-Component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-update-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-create-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-create-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-page-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-page-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-update-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/adminLayout/admin-dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/adminLayout/admin-dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-Create-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-Create-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-page-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-page-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-update-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/noData/no-data.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/noData/no-data.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/user/user-login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/user/user-login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/Loading-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/BlogService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/services/BlogService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +67,7 @@
       <workItem from="1733744173800" duration="1544000" />
       <workItem from="1733804000863" duration="2317000" />
       <workItem from="1733807640259" duration="12860000" />
-      <workItem from="1733836058281" duration="15206000" />
+      <workItem from="1733836058281" duration="15953000" />
     </task>
     <servers />
   </component>
