@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-update-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-update-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/blogs/blog-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/blogs/blog-details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/layout/app-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/layout/app-navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/blog-list-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/blog-list-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/BlogController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/BlogController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/BlogService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/services/BlogService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-update-component.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
       <updated>1733744170753</updated>
       <workItem from="1733744173800" duration="1544000" />
       <workItem from="1733804000863" duration="2317000" />
-      <workItem from="1733807640259" duration="1746000" />
+      <workItem from="1733807640259" duration="5204000" />
     </task>
     <servers />
   </component>

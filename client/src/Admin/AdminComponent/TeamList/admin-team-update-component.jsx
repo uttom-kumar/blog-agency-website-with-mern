@@ -5,14 +5,13 @@ import TeamListStore from "../../../store/team-list-store.js";
 
 const AdminTeamUpdateComponent = () => {
     const {teamFormData,teamOnChange,updateTeamListRequest,UserFilterByTeamListRequest,
-        TeamListReadRequest,SingleTeamListReadRequest} = TeamListStore();
+        SingleTeamListReadRequest} = TeamListStore();
 
     const{id} = useParams();
 
     useEffect(() => {
         (async () => {
             await SingleTeamListReadRequest(id)
-            await TeamListReadRequest()
             await UserFilterByTeamListRequest()
         })()
     }, [id]);
@@ -38,7 +37,7 @@ const AdminTeamUpdateComponent = () => {
             <div className="container-fluid py-3">
                 <div className="">
                     <div>
-                        <Link className="text-dark fw-bold" to={`/auth/admin/blog`}>Team page</Link>
+                        <Link className="text-dark fw-bold" to={`/auth/admin/team`}>Team page</Link>
                         /<Link className="text-dark" to={`/auth/admin/dashboard`}>Dashboard</Link>
                     </div>
                     <div className="my-4 mx-auto col-lg-8 bg-white rounded shadow">

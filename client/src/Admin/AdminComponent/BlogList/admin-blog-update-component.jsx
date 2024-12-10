@@ -6,14 +6,15 @@ import {useEffect} from "react";
 
 const AdminBlogUpdateComponent = () => {
     const {BlogFormData,BlogOnChange,BlogListFilterByAdminRequest,
-        BlogUpdateRequest,SingleBlogReadRequest} = BlogListStore()
+        BlogUpdateRequest,SingleBlogReadRequest,BlogListRequest} = BlogListStore()
 
     const {blogID} = useParams();
 
     useEffect(() => {
         (async () =>{
-            await SingleBlogReadRequest(blogID)
+            await BlogListRequest()
             await BlogListFilterByAdminRequest()
+            await SingleBlogReadRequest(blogID)
         })()
     }, [blogID]);
 

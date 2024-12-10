@@ -30,7 +30,7 @@ const AdminHeroSliderUpdateComponent = () => {
             <div className="container-fluid py-3">
                 <div className="">
                     <div>
-                        <Link className="text-dark fw-bold" to={`/auth/admin/blog`}>Slide page</Link>
+                        <Link className="text-dark fw-bold" to={`/auth/admin/slider`}>Slide page</Link>
                         /<Link className="text-dark" to={`/auth/admin/dashboard`}>Dashboard</Link>
                     </div>
                     <div className="my-4 mx-auto col-lg-8 bg-white rounded shadow">
