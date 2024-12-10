@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="" />
+    <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-create-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-create-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/BlogList/admin-blog-update-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-create-Component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-create-Component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/ServiceList/admin-service-update-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-create-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-create-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/TeamList/admin-team-update-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-Create-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-Create-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-update-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/heroSlider/admin-hero-slider-update-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/blog-list-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/blog-list-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/service-list-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/service-list-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/slider-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/slider-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/team-list-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/team-list-store.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +77,7 @@
       <updated>1733744170753</updated>
       <workItem from="1733744173800" duration="1544000" />
       <workItem from="1733804000863" duration="2317000" />
-      <workItem from="1733807640259" duration="5540000" />
+      <workItem from="1733807640259" duration="12474000" />
     </task>
     <servers />
   </component>

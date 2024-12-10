@@ -4,8 +4,8 @@ import {Link, useParams} from "react-router-dom";
 import {useEffect} from "react";
 
 const AdminHeroSliderUpdateComponent = () => {
-    const {sliderFormData,sliderOnChange,BlogSliderListRequest,
-        userFilterBySliderListRequest,updateSliderListRequest,SingleSliderListReadRequest} = SliderStore()
+    const {UpdateSliderFormData, UpdateSliderOnChange, BlogSliderListRequest,
+        userFilterBySliderListRequest, updateSliderListRequest, SingleSliderListReadRequest} = SliderStore()
 
     const {id} = useParams();
 
@@ -18,7 +18,7 @@ const AdminHeroSliderUpdateComponent = () => {
 
     const UpdateSliderListButton = async () => {
 
-        let res = await updateSliderListRequest(id,sliderFormData)
+        let res = await updateSliderListRequest(id,UpdateSliderFormData)
         if(res === true){
             await BlogSliderListRequest()
             await userFilterBySliderListRequest()
@@ -38,23 +38,23 @@ const AdminHeroSliderUpdateComponent = () => {
                         <form className="p-3">
                             <input className="form-control mb-3"
                                    type="text" placeholder="Enter Cloudinary or ImgBB image URL"
-                                   value={sliderFormData?.image}
-                                   onChange={(e) => {sliderOnChange('image', e.target.value)}}
+                                   value={UpdateSliderFormData?.image}
+                                   onChange={(e) => {UpdateSliderOnChange('image', e.target.value)}}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your blog heading"
-                                   value={sliderFormData?.heading}
-                                   onChange={(e) => {sliderOnChange('heading', e.target.value)}}
+                                   value={UpdateSliderFormData?.heading}
+                                   onChange={(e) => {UpdateSliderOnChange('heading', e.target.value)}}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your blog title"
-                                   value={sliderFormData?.title}
-                                   onChange={(e) => {sliderOnChange('title', e.target.value)}}
+                                   value={UpdateSliderFormData?.title}
+                                   onChange={(e) => {UpdateSliderOnChange('title', e.target.value)}}
                             />
                             <textarea className=" my-2 form-control"
                                       rows={4} placeholder="Enter up to 400 words"
-                                      value={sliderFormData?.description}
-                                      onChange={(e) => {sliderOnChange('description', e.target.value)}}
+                                      value={UpdateSliderFormData?.description}
+                                      onChange={(e) => {UpdateSliderOnChange('description', e.target.value)}}
                             />
                             <div className="ms-auto mt-3">
                                 <button className="btn btn-success px-5" onClick={UpdateSliderListButton}

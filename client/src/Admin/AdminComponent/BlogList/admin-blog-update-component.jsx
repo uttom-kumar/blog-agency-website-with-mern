@@ -5,7 +5,7 @@ import {useEffect} from "react";
 
 
 const AdminBlogUpdateComponent = () => {
-    const {BlogFormData,BlogOnChange,BlogListFilterByAdminRequest,
+    const {UpdateBlogFormData,UpdateBlogOnChange,BlogListFilterByAdminRequest,
         BlogUpdateRequest,SingleBlogReadRequest,BlogListRequest} = BlogListStore()
 
     const {blogID} = useParams();
@@ -19,7 +19,7 @@ const AdminBlogUpdateComponent = () => {
     }, [blogID]);
 
     const UpdateBlogListButton =async ()=>{
-        let res = await BlogUpdateRequest(blogID,BlogFormData)
+        let res = await BlogUpdateRequest(blogID,UpdateBlogFormData)
 
         if(res === true) {
             await BlogListFilterByAdminRequest()
@@ -30,6 +30,7 @@ const AdminBlogUpdateComponent = () => {
         }
 
     }
+
 
 
     return (
@@ -45,21 +46,20 @@ const AdminBlogUpdateComponent = () => {
                         <form className="p-3">
                             <input className="form-control mb-3"
                                    type="text" placeholder="Enter Cloudinary or ImgBB image URL"
-                                   value={BlogFormData?.img}
-                                   onChange={(e) => {BlogOnChange('img',e.target.value)}}
+                                   value={UpdateBlogFormData?.img}
+                                   onChange={(e) => {UpdateBlogOnChange('img',e.target.value)}}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your blog title"
-                                   defaultValue={BlogFormData?.title}
-                                   onChange={(e) => {BlogOnChange('title',e.target.value)}}
+                                   value={UpdateBlogFormData?.title}
+                                   onChange={(e) => {UpdateBlogOnChange('title',e.target.value)}}
                             />
                             <textarea className=" my-2 form-control"
                                       rows={12}  placeholder="Enter up to 400 words"
-                                      defaultValue={BlogFormData?.des}
-                                      onChange={(e) => {BlogOnChange('des',e.target.value)}}
+                                      value={UpdateBlogFormData?.des}
+                                      onChange={(e) => {UpdateBlogOnChange('des',e.target.value)}}
                             />
-                            <div className="mt-3 d-flex justify-content-between align-items-center">
-                                <button className="btn btn-secondary px-3" type={"reset"}>Reset</button>
+                            <div className="mt-3">
                                 <button className="btn btn-success px-5" onClick={UpdateBlogListButton} type={"button"}>Submit</button>
                             </div>
                         </form>

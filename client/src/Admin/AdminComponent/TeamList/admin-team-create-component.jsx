@@ -45,6 +45,18 @@ const AdminTeamCreateComponent = () => {
         setLoading(false); // Re-enable the button
     };
 
+    const ResetButton = () => {
+        teamOnChange("image", "");
+        teamOnChange("name", "");
+        teamOnChange("position", "");
+        teamOnChange("bio", "");
+        teamOnChange("description", "");
+    }
+
+
+
+
+
     return (
         <div className="container-fluid py-3">
             <div>
@@ -105,7 +117,14 @@ const AdminTeamCreateComponent = () => {
                             value={teamFormData?.description}
                             onChange={(e) => teamOnChange("description", e.target.value)}
                         />
-                        <div className="ms-auto mt-3">
+                        <div className="ms-auto mt-4 mb-4 d-flex justify-content-between align-items-center">
+                            <button
+                                className="btn btn-success px-5"
+                                onClick={ResetButton}
+                                type="button"
+                            >
+                                Reset
+                            </button>
                             <button
                                 className="btn btn-success px-5"
                                 onClick={CreateTeamListButton}

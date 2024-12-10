@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import TeamListStore from "../../../store/team-list-store.js";
 
 const AdminTeamUpdateComponent = () => {
-    const {teamFormData,teamOnChange,updateTeamListRequest,UserFilterByTeamListRequest,
+    const {UpdateTeamFormData, UpdateTeamOnChange, updateTeamListRequest, UserFilterByTeamListRequest,
         SingleTeamListReadRequest} = TeamListStore();
 
     const{id} = useParams();
@@ -17,11 +17,11 @@ const AdminTeamUpdateComponent = () => {
     }, [id]);
 
     const UpdateTeamListButton =async () => {
-        let {description} = teamFormData
+        let {description} = UpdateTeamFormData
         if( description.length !== 200){
             return toast.error("Description Can't pay more than 200 or less than 200")
         }
-        let res = await updateTeamListRequest(id,teamFormData)
+        let res = await updateTeamListRequest(id,UpdateTeamFormData)
         if(res === true){
             await UserFilterByTeamListRequest()
             toast.success("Update TeamList");
@@ -45,43 +45,43 @@ const AdminTeamUpdateComponent = () => {
                         <form className="p-3">
                             <input className="form-control mb-3"
                                    type="text" placeholder="Enter Cloudinary or ImgBB image URL"
-                                   value={teamFormData?.image}
+                                   value={UpdateTeamFormData?.image}
                                    onChange={(e) => {
-                                       teamOnChange('image', e.target.value)
+                                       UpdateTeamOnChange('image', e.target.value)
                                    }}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your name"
-                                   value={teamFormData?.name}
+                                   value={UpdateTeamFormData?.name}
                                    onChange={(e) => {
-                                       teamOnChange('name', e.target.value)
+                                       UpdateTeamOnChange('name', e.target.value)
                                    }}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your position"
-                                   value={teamFormData?.position}
+                                   value={UpdateTeamFormData?.position}
                                    onChange={(e) => {
-                                       teamOnChange('position', e.target.value)
+                                       UpdateTeamOnChange('position', e.target.value)
                                    }}
                             />
                             <p className="m-0"
-                               style={{color: teamFormData.bio.length === 100 ? "green" : "red"}}
-                            >Characters Count {teamFormData.bio.length}</p>
+                               style={{color: UpdateTeamFormData?.bio?.length === 100 ? "green" : "red"}}
+                            >Characters Count {UpdateTeamOnChange?.bio?.length}</p>
                             <textarea className=" mb-3 form-control"
                                    rows={2} placeholder="Enter your bio"
-                                   value={teamFormData?.bio}
+                                   value={UpdateTeamFormData?.bio}
                                    onChange={(e) => {
-                                       teamOnChange('bio', e.target.value)
+                                       UpdateTeamOnChange('bio', e.target.value)
                                    }}
                             />
                             <p className="m-0"
-                               style={{color: teamFormData.description.length === 200 ? "green" : "red"}}
-                            >Characters Count {teamFormData.description.length}</p>
+                               style={{color: UpdateTeamFormData?.description?.length === 200 ? "green" : "red"}}
+                            >Characters Count {UpdateTeamOnChange?.description?.length}</p>
                             <textarea className=" my-2 form-control"
                                       rows={4} placeholder="Enter up to 200 characters"
-                                      value={teamFormData?.description}
+                                      value={UpdateTeamFormData?.description}
                                       onChange={(e) => {
-                                          teamOnChange('description', e.target.value)
+                                          UpdateTeamOnChange('description', e.target.value)
                                       }}
                             />
                             <div className="ms-auto mt-3">

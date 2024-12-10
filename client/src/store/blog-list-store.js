@@ -26,7 +26,7 @@ const BlogListStore = create((set)=>({
         let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleBlogRead/${blogID}`
         let res = await axios.get(url);
         if(res.data['status']==="success"){
-            set({BlogFormData: res.data.data})
+            set({UpdateBlogFormData: res.data.data})
         }
     },
 
@@ -55,10 +55,22 @@ const BlogListStore = create((set)=>({
     },
 
 // -----------------blog update request -------------------------
+    UpdateBlogFormData: {title:"", des:"", img:""},
+    UpdateBlogOnChange: (name, value) => {
+        set((state)=>({
+            UpdateBlogFormData:{
+                ...state.UpdateBlogFormData,
+                [name]:value
+            }
+        }))
+    },
     BlogUpdateRequest: async (blogID,reqBody) => {
         try{
             let url = `https://blog-agency-website-with-mern.vercel.app/api/BlogUpdate/${blogID}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
+            if(res.data['status'] === 'success'){
+                set({UpdateBlogFormData: res.data.data})
+            }
             return res.data['status'] === "success"
         }
         catch (err){

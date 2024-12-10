@@ -17,7 +17,7 @@ const SliderStore = create((set)=> ({
         let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleSliderList/${id}`
         let res = await axios.get(url);
         if(res.data['status']==="success"){
-            set({sliderFormData: res.data.data})
+            set({UpdateSliderFormData: res.data.data})
         }
     },
 // ---------------- userFilter By SliderList Request ------------------------
@@ -73,10 +73,22 @@ const SliderStore = create((set)=> ({
         }
     },
 // ------------------ update slider request --------------------
+    UpdateSliderFormData: {image:"",heading:"",title:"",description:""},
+    UpdateSliderOnChange: (name, value) =>{
+        set((state)=>({
+            UpdateSliderFormData:{
+                ...state.UpdateSliderFormData,
+                [name]:value
+            }
+        }))
+    },
     updateSliderListRequest: async (id,reqBody) => {
         try{
             let url = `https://blog-agency-website-with-mern.vercel.app/api/UpdateBlogSlider/${id}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
+            if(res.data['status']==='success'){
+                set({UpdateSliderFormData: res.data.data})
+            }
             return res.data['status'] === "success"
         }
         catch (err){

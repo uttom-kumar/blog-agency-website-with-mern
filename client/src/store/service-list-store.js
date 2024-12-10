@@ -18,7 +18,7 @@ const ServiceListStore = create((set)=>({
         let url = `https://blog-agency-website-with-mern.vercel.app/api/SingleReadServiceController/${id}`
         let res = await axios.get(url);
         if(res.data['status']==="success"){
-            set({serviceFormData: res.data.data})
+            set({UpdateServiceFormData: res.data.data})
         }
     },
 // ----------------------------- usr filter by service request ----------------------
@@ -69,10 +69,22 @@ const ServiceListStore = create((set)=>({
         }
     },
 // -------------------------- --- update Team request ----------------------------------
+    UpdateServiceFormData: {image:"",title:"",des:""},
+    UpdateServiceOnChange: (name, value) =>{
+        set((state)=>({
+            UpdateServiceFormData:{
+                ...state.UpdateServiceFormData,
+                [name]:value
+            }
+        }))
+    },
     updateServiceRequest: async (id,reqBody) => {
         try{
             let url = `https://blog-agency-website-with-mern.vercel.app/api/UpdateService/${id}`
             let res = await axios.post(url,reqBody,{headers: {token : Cookies.get('token')}})
+            if(res.data['status'] === "success"){
+                set({UpdateServiceFormData:res.data.data})
+            }
             return res.data['status'] === "success"
         }
         catch (err){

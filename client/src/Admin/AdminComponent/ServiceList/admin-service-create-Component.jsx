@@ -32,6 +32,12 @@ const AdminServiceCreateComponent = () => {
         }
 
     }
+    const ResetButton = () => {
+        serviceOnChange('image', "");
+        serviceOnChange('title', "");
+        serviceOnChange('des', "");
+    }
+
 
 
     return (
@@ -70,6 +76,9 @@ const AdminServiceCreateComponent = () => {
                                       }}
                             />
                             <div className="mt-3 d-flex justify-content-between align-items-center">
+                                <button className="btn btn-success px-5" onClick={ResetButton}
+                                        type={"button"}>Reset
+                                </button>
                                 <button className="btn btn-success px-5" onClick={CreateBlogListButton}
                                         type={"button"}>Submit
                                 </button>

@@ -26,6 +26,15 @@ const AdminHeroSliderCreateComponent = () => {
             sliderOnChange('description', "");
         }
     }
+
+    const ResetButton = () => {
+        sliderOnChange('image', "");
+        sliderOnChange('heading', "");
+        sliderOnChange('title', "");
+        sliderOnChange('description', "");
+    }
+
+
     return (
         <div>
             <div className="container-fluid py-3">
@@ -57,7 +66,10 @@ const AdminHeroSliderCreateComponent = () => {
                                       value={sliderFormData?.description}
                                       onChange={(e) => {sliderOnChange('description', e.target.value)}}
                             />
-                            <div className="ms-auto mt-3">
+                            <div className="ms-auto d-flex justify-content-between align-items-center mt-3">
+                                <button className="btn btn-success px-5" onClick={ResetButton}
+                                        type={"reset"}>Reset
+                                </button>
                                 <button className="btn btn-success px-5" onClick={CreateSliderListButton}
                                         type={"button"}>Submit
                                 </button>

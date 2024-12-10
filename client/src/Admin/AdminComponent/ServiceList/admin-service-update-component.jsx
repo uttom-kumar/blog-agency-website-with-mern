@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import ServiceListStore from "../../../store/service-list-store.js";
 
 const AdminServiceUpdateComponent = () => {
-    const {serviceFormData,serviceOnChange,updateServiceRequest,ServiceListReadRequest,
+    const {UpdateServiceFormData,UpdateServiceOnChange,updateServiceRequest,ServiceListReadRequest,
         userFilterByServiceListRequest, SingleServiceListReadRequest} = ServiceListStore()
 
     const{id} = useParams();
@@ -18,11 +18,11 @@ const AdminServiceUpdateComponent = () => {
     }, [id]);
 
     const UpdateServiceButton =async () => {
-        let {des} = serviceFormData
+        let {des} = UpdateServiceFormData
         if( des.length !== 250){
             return toast.error("Description Can't pay more than 200 or less than 200")
         }
-        let res = await updateServiceRequest(id,serviceFormData)
+        let res = await updateServiceRequest(id,UpdateServiceFormData)
         if(res === true){
             await userFilterByServiceListRequest()
             toast.success("Update TeamList");
@@ -46,27 +46,27 @@ const AdminServiceUpdateComponent = () => {
                         <form className="p-3">
                             <input className="form-control mb-3"
                                    type="text" placeholder="Enter Cloudinary or ImgBB image URL"
-                                   defaultValue={serviceFormData?.image}
+                                   value={UpdateServiceFormData?.image}
                                    onChange={(e) => {
-                                       serviceOnChange('image', e.target.value)
+                                       UpdateServiceOnChange('image', e.target.value)
                                    }}
                             />
                             <input className=" mb-3 form-control"
                                    type="text" placeholder="Enter your name"
-                                   defaultValue={serviceFormData?.title}
+                                   value={UpdateServiceFormData?.title}
                                    onChange={(e) => {
-                                       serviceOnChange('title', e.target.value)
+                                       UpdateServiceOnChange('title', e.target.value)
                                    }}
                             />
 
                             <p className="m-0"
-                               style={{color: serviceFormData?.des.length === 250 ? "green" : "red"}}
-                            >Characters Count {serviceFormData?.des.length}</p>
+                               style={{color: UpdateServiceFormData?.des?.length === 250 ? "green" : "red"}}
+                            >Characters Count {UpdateServiceOnChange?.des?.length}</p>
                             <textarea className=" my-2 form-control"
                                       rows={4} placeholder="Enter up to 250 characters"
-                                      defaultValue={serviceFormData?.des}
+                                      value={UpdateServiceFormData?.des}
                                       onChange={(e) => {
-                                          serviceOnChange('des', e.target.value)
+                                          UpdateServiceOnChange('des', e.target.value)
                                       }}
                             />
                             <div className="ms-auto mt-3">
