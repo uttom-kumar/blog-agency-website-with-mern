@@ -19,6 +19,10 @@ const AdminRegisterComponent = () => {
 
         try{
             setLoading("d-block")
+            if(confirmPassword !== RegisterForm.password){
+                setLoading("d-none");
+                return setError("Passwords do not match");
+            }
             let res = await RegisterRequest(RegisterForm)
             if(res["status"] === 'success'){
                 navigate("/auth/admin/login")
@@ -33,10 +37,6 @@ const AdminRegisterComponent = () => {
                 if(!IsEmail(RegisterForm.email)){
                     setLoading("d-none");
                     toast.error("Please enter a valid email");
-                }
-                if(confirmPassword !== RegisterForm.password){
-                    setLoading("d-none");
-                    setError("Passwords do not match");
                 }
             }
         }catch (err) {

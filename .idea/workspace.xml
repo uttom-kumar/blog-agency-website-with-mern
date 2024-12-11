@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/blogs/hero-slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/blogs/hero-slider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/home-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-register-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-register-component.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,8 @@
       <workItem from="1733744173800" duration="1544000" />
       <workItem from="1733804000863" duration="2317000" />
       <workItem from="1733807640259" duration="12860000" />
-      <workItem from="1733836058281" duration="19144000" />
+      <workItem from="1733836058281" duration="19582000" />
+      <workItem from="1733888583711" duration="2837000" />
     </task>
     <servers />
   </component>
