@@ -16,7 +16,7 @@ const BlogChartComponent = () => {
             await UserFilterByTeamListRequest()
             await userFilterByServiceListRequest()
         })();
-    }, [BlogListFilterByAdminRequest]);
+    }, []);
 
 
     // Preparing data for the chart
