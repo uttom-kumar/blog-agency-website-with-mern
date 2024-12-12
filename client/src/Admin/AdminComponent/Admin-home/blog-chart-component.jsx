@@ -7,8 +7,8 @@ import BlogChartSkeleton from "../../../skeleton/blog-chart-skeleton.jsx";
 
 const BlogChartComponent = () => {
     const { BlogListFilterAdmin, BlogListFilterByAdminRequest } = BlogListStore();
-    const {UserFilterByTeamList,UserFilterByTeamListRequest} = TeamListStore()
-    const {userFilterByServiceList,userFilterByServiceListRequest} = ServiceListStore()
+    const {UserFilterByTeamListRequest} = TeamListStore()
+    const {userFilterByServiceListRequest} = ServiceListStore()
 
     useEffect(() => {
         (async () => {
@@ -24,8 +24,8 @@ const BlogChartComponent = () => {
         ? {
             series: [
                 {
-                    name: 'Blog', // Label for the data series
-                    data: BlogListFilterAdmin?.map((_,index) => index || 0), // Views data
+                    name: 'Blog',
+                    data: BlogListFilterAdmin?.map((_,index) => index+1 || 0),
                 },
             ],
             options: {
@@ -63,7 +63,7 @@ const BlogChartComponent = () => {
         : null;
 
     return (
-        <div className="container mt-4">
+        <div className="mt-4">
             <div className="bg-white rounded p-4">
                 {chartData ? (
                     <ReactApexChart

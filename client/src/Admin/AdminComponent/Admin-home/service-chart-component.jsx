@@ -19,7 +19,7 @@ const ServiceChartComponent = () => {
             series: [
                 {
                     name: 'Service', // Label for the data series
-                    data: userFilterByServiceList?.map((_,index) => index || 0), // Views data
+                    data: userFilterByServiceList?.map((_,index) => index+1 || 0), // Views data
                 },
             ],
             options: {
@@ -57,7 +57,7 @@ const ServiceChartComponent = () => {
         : null;
 
     return (
-        <div className="container mt-4">
+        <div className="mt-4">
             <div className="bg-white rounded p-4">
                 {chartData ? (
                     <ReactApexChart

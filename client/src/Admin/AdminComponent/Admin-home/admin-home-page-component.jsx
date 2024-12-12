@@ -21,7 +21,7 @@ const AdminHomePageComponent = () => {
 
 
     return (
-        <div className="container mt-4">
+        <div className="px-4 mt-4">
             <CounterListComponent />
             <div className="row">
                 <div className="col-lg-6 col-md-12 col-sm-12 col-12">

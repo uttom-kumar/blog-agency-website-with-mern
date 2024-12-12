@@ -18,7 +18,7 @@ const CounterListComponent = () => {
     return (
         <div>
             <div className="row mb-4 px-2">
-                <div className="col-lg-4 col-md-2 col-sm-12 col-12">
+                <div className="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
                     <div className="bg-white p-3 rounded shadow">
                         <div>
                             <p className="m-0">Blog</p>
@@ -26,7 +26,7 @@ const CounterListComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-2 col-sm-12 col-12">
+                <div className="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
                     <div className="bg-white p-3 rounded shadow">
                         <div>
                             <p className="m-0">Service</p>
@@ -34,7 +34,7 @@ const CounterListComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-2 col-sm-12 col-12">
+                <div className="col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
                     <div className="bg-white p-3 rounded shadow">
                         <div>
                             <p className="m-0">Team</p>

@@ -32,18 +32,18 @@ const AdminTeamPageComponent = () => {
             <div className={loading}>
                 <LoadingSkeleton />
             </div>
-            <div className="container mt-4">
+            <div className="px-4 mt-4">
                 <div className="d-flex justify-content-between align-items-center py-3">
                     <h5>Team List</h5>
                     <Link to={`/auth/admin/teamCreate`} className="btn btn-info">Create Team</Link>
                 </div>
-                <div className="scroll_table">
+                <div style={{ overflowX: "auto" ,display: "block",width:"100%",whiteSpace: "nowrap" }}>
                     <div className="table-responsive">
                         <table className="table table-bordered">
                             <thead className="thead-dark text-center">
                             <tr>
-                                <th></th>
-                                <th></th>
+                                <th>Total</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Position</th>
                                 <th className="text-center">Date</th>
@@ -58,7 +58,7 @@ const AdminTeamPageComponent = () => {
                                         <tr>
                                             <td className="text-center">{i + 1}</td>
                                             <td>
-                                                <img className="img-fluid table_img" src={item?.image} alt=""/>
+                                                <img className="table_img" src={item?.image} alt=""/>
                                             </td>
                                             <td>{item?.name}</td>
                                             <td>{item?.position}</td>

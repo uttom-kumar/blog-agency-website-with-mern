@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import ServiceListStore from "../../../store/service-list-store.js";
 import NoData from "../../../component/noData/no-data.jsx";
 import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
+import TableSkeleton from "../../../skeleton/table-skeleton.jsx";
 
 
 const AdminServiceComponent = () => {
@@ -35,20 +36,20 @@ const AdminServiceComponent = () => {
             <div className={loading}>
                 <LoadingSkeleton />
             </div>
-            <div className="container mt-4">
+            <div className="px-4 mt-4">
                 <div className="d-flex justify-content-between align-items-center py-3">
                     <h5>Service list</h5>
                     <Link to={`/auth/admin/createService`} className="btn btn-success border-0">
                         Create Service List
                     </Link>
                 </div>
-                <div className="scroll_table">
+                <div style={{ overflowX: "auto" ,display: "block",width:"100%",whiteSpace: "nowrap" }}>
                     <div className="table-responsive">
                         <table className="table table-bordered">
                             <thead className="thead-dark text-center">
                             <tr>
-                                <th></th>
-                                <th></th>
+                                <th>Total</th>
+                                <th>Image</th>
                                 <th>Title</th>
                                 <th className="text-center">Date</th>
                                 <th></th>
@@ -62,7 +63,7 @@ const AdminServiceComponent = () => {
                                         <tr>
                                             <td className="text-center">{i + 1}</td>
                                             <td className="text-center">
-                                                <img className="img-fluid table_img" src={item?.image} alt=""/>
+                                                <img className="table_img" src={item?.image} alt=""/>
                                             </td>
                                             <td>{item?.title}</td>
                                             <td className="text-center">{convertToLocalTime(item?.createdAt)}</td>
@@ -85,7 +86,7 @@ const AdminServiceComponent = () => {
                             }
                         </table>
                         {userFilterByServiceList?.length === 0 && <NoData/>}
-                        {userFilterByServiceList === null && <NoData/>}
+                        {userFilterByServiceList === null && <TableSkeleton/>}
                     </div>
                 </div>
             </div>

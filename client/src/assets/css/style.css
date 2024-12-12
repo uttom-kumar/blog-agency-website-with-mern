@@ -136,15 +136,10 @@ a{
     top: 60px !important;
 }
 
-.scroll_table{
-    width: 100% !important;
-    height: 70vh !important;
-    overflow: auto !important;
-}
 
 .table_img{
     width: 100px !important;
-    height: 100px !important;
+    height: 60px !important;
 }
 
 .profile_img{
