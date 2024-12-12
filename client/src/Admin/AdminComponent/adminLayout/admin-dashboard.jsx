@@ -29,9 +29,9 @@ const AdminDashboard = () => {
                 <LoadingSkeleton />
             </div>
             <div className="sticky-top">
-                <div className="container-fluid">
+                <div className="">
                     <div>
-                        <div className="d-flex justify-content-between align-items-center px-2 bg-white">
+                        <div className="d-flex justify-content-between align-items-center px-4 bg-white">
                             <div>
                                 <Link to={`/auth/admin/dashboard`}>DashBoard</Link>
                             </div>

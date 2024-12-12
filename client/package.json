@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "apexcharts": "^4.2.0",
     "axios": "^1.7.8",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.7",
     "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.0",
     "nextjs-toploader": "^3.7.15",
     "react": "^18.3.1",
+    "react-apexcharts": "^1.7.0",
     "react-bootstrap": "^2.10.6",
+    "react-chartjs-2": "^5.2.0",
     "react-code-input": "^3.10.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",

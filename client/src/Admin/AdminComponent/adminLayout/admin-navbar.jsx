@@ -18,7 +18,7 @@ const AdminNavbar = () => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav mt-lg-5 mx-lg-auto ms-md-auto ms-sm-auto ms-auto d-lg-block mb-2 mb-lg-0">
+                            <ul className="navbar-nav mt-lg-5 mx-lg-auto ms-md-auto ms-sm-auto ms-auto d-lg-block mb-2 mb-lg-0 text-lg-center text-md-start text-sm-start text-start">
                                 <li className="nav-item">
                                     <Link to={`/auth/admin/dashboard`} className="nav-link active"
                                           aria-current="page">Home</Link>
