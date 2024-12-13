@@ -156,7 +156,10 @@ a{
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-
+.navbar-nav .nav-link.active {
+    color: #0DD4F6 !important;
+    font-weight: bold !important;
+}
 
 
 

@@ -1,38 +1,30 @@
-import {ContactModel} from "../models/contactModel.js";
+import {ContactSend} from "../utility/ContactUtility.js";
+
 
 export const CreateContactService = async (req) => {
     try{
         let reqBody = req.body
+        let {fullName, email , subject, msg} = reqBody
 
-        await ContactModel.create(reqBody)
-
-        return {
-            status: "success",
-            message: "Contact Service Created",
+        if (!fullName || !email || !subject || !msg) {
+           return ("All fields are required");
         }
+
+        let EmailSubject = `Subject: ${subject}`
+        let EmailText = `Message: ${msg}`
+
+        await ContactSend(fullName, email, EmailText, EmailSubject)
+
+        return{
+            status : "success",
+            message : "Send Successfully"
+        }
+
     }
     catch(err){
-        return{
-            status: "failed",
-            message: "Create contact failed"
-        }
-    }
-}
-
-export const ReadContactService = async (req) => {
-    try{
-        let data = await ContactModel.find()
         return {
-            status: "success",
-            message: "Read contact successfully",
-            data: data
-        }
-    }
-    catch(err){
-        return{
-            status: "failed",
-            message: "Read contact failed",
-            error: err.toString()
+            status : "failed",
+            message : "please correct information",
         }
     }
 }

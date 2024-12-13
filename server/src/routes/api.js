@@ -33,8 +33,7 @@ import {
     RemoveBlogSlider, SingleSliderList,
     UpdateBlogSlider, UserFilterBySliderList
 } from "../controllers/BlogSliderController.js";
-import {CreateContact, ReadContact} from "../controllers/ContactController.js";
-import {ReadContactService} from "../services/ContactService.js";
+import {CreateContact} from "../controllers/ContactController.js";
 import {
     CreateServiceController,
     ReadServiceController,
@@ -94,7 +93,6 @@ router.get("/UserFilterByServiceList",AuthMiddleware, UserFilterByServiceList)
 
 // contact routes
 router.post("/CreateContact",CreateContact)
-router.get("/ReadContact",ReadContact)
 
 
 
