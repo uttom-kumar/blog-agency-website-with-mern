@@ -12,7 +12,7 @@ const ContactComponent = () => {
     const SubmitButton=async ()=>{
         try{
             let res = await ContactCreateRequest(ContactFormData)
-            console.log(res)
+
             if(res){
                 toast.success("Successfully submit");
             }
@@ -35,8 +35,8 @@ const ContactComponent = () => {
                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 my-2">
                             <input className="form-control" type="text" placeholder="Full Name"
                                    required
-                                    defaultValue={ContactFormData.name}
-                                    onChange={(e) => {ContactFormOnChange('name', e.target.value)}}
+                                    defaultValue={ContactFormData.fullName}
+                                    onChange={(e) => {ContactFormOnChange('fullName', e.target.value)}}
                             />
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-12 col-12 my-2">
