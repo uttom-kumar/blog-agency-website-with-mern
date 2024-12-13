@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/utility/ContactUtility.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/adminLayout/admin-dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/adminLayout/admin-dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/adminLayout/admin-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/adminLayout/admin-navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/ContactController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/ContactController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/contactModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/contactModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/ContactService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/services/ContactService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/utility/ContactUtility.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/utility/ContactUtility.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +78,7 @@
       <workItem from="1733888583711" duration="4625000" />
       <workItem from="1734030820801" duration="10564000" />
       <workItem from="1734076316602" duration="16093000" />
-      <workItem from="1734102326243" duration="3378000" />
+      <workItem from="1734102326243" duration="4611000" />
     </task>
     <servers />
   </component>
