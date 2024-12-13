@@ -10,8 +10,8 @@ export const CreateContactService = async (req) => {
            return ("All fields are required");
         }
 
-        let EmailSubject = `Subject: ${subject}`
-        let EmailText = `Message: ${msg}`
+        let EmailSubject = `${subject}`
+        let EmailText = `${msg}`
 
         await ContactSend(fullName, email, EmailText, EmailSubject)
 
