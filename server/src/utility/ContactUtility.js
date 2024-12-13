@@ -95,8 +95,8 @@ export const ContactSend = async (FullName,EmailTo, EmailText, EmailSubject) => 
 
                 <div class="content">
                   <h2>Hi there, ${EmailTo}</h2>
-                  <h4>Hi there, ${EmailSubject}</h4>
-                  <p>Your OTP code is: <strong>${EmailText}</strong></p>
+                  <h4>Subject : ${EmailSubject}</h4>
+                  <p>Message: <strong>${EmailText}</strong></p>
                 </div>
 
                 <div class="footer">
