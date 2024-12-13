@@ -5,7 +5,6 @@ import { convertToLocalTime } from "../../../utility/timeStamp.js";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
-import BlogSkeleton from "../../../skeleton/blog-skeleton.jsx";
 import NoData from "../../../component/noData/no-data.jsx";
 import TableSkeleton from "../../../skeleton/table-skeleton.jsx";
 import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
@@ -44,7 +43,7 @@ const AdminBlogPageComponent = () => {
 
                 <div style={{ overflowX: "auto" ,display: "block",width:"100%",whiteSpace: "nowrap" }}>
                     <table className="table table-bordered">
-                        <thead className="thead-dark">
+                        <thead className="thead-dark ">
                         <tr>
                             <th>Total</th>
                             <th>Image</th>
@@ -59,7 +58,7 @@ const AdminBlogPageComponent = () => {
                             <tr>
                                 <td className="text-center">{i + 1}</td>
                                 <td className="text-center">
-                                    <img className="img-fluid table_img" src={item?.img} alt="" />
+                                    <img className="table_img" src={item?.img} alt="" />
                                 </td>
                                 <td>{item?.title}</td>
                                 <td className="text-center">{convertToLocalTime(item?.createdAt)}</td>

@@ -1,14 +1,15 @@
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import {Dropdown} from "react-bootstrap";
 import imgT from "../../../assets/images/hero.png";
 import AdminStore from "../../../store/admin-store.js";
 import toast from "react-hot-toast";
 import {useState} from "react";
 import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
-
+import { FaSearch } from "react-icons/fa";
 
 const AdminDashboard = () => {
     const [loading , setLoading] = useState('d-none');
+    const[searchText,setSearchText] = useState("");
     const {LogOutRequest} = AdminStore()
     const navigate = useNavigate();
 
@@ -23,18 +24,29 @@ const AdminDashboard = () => {
         }
         setLoading('d-none');
     }
+
     return (
         <>
             <div className={loading}>
                 <LoadingSkeleton />
             </div>
             <div className="sticky-top">
-                <div className="">
-                    <div>
-                        <div className="d-flex justify-content-between align-items-center px-4 bg-white">
+                <div className="container-fluid ">
+                    <div className="">
+                        <div className="d-flex justify-content-between align-items-center px-4 bg-white shadow  ">
                             <div>
-                                <Link to={`/auth/admin/dashboard`}>DashBoard</Link>
+                                <h4 className="m-0">Overview</h4>
                             </div>
+                            <form>
+                                <div className="input-group">
+                                    <input className="form-control" type="text"
+                                           placeholder="Search..."
+                                           value={searchText}
+                                           onChange={(e) => setSearchText(e.target.value)}
+                                    />
+                                    <button type="button" className="btn btn-success" ><FaSearch/></button>
+                                </div>
+                            </form>
                             <div>
                                 <Dropdown>
                                     <Dropdown.Toggle variant="" id="dropdown-basic"

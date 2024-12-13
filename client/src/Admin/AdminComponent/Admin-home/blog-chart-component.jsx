@@ -36,6 +36,12 @@ const BlogChartComponent = () => {
                 stroke: {
                     curve: 'smooth',
                 },
+                grid: {
+                    row: {
+                        colors: ['#f3f3f3', 'transparent'],
+                        opacity: 0.5
+                    },
+                },
                 xaxis: {
                     categories: BlogListFilterAdmin?.map((item) =>
                         new Date(item?.createdAt).toLocaleDateString() || "Unknown Date"

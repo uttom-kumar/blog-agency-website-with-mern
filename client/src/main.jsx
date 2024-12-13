@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Toaster} from 'react-hot-toast'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'react-medium-image-zoom/dist/styles.css'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -4,11 +4,15 @@ import {useState} from "react";
 import AdminStore from "../../store/admin-store.js";
 import Cookies from "js-cookie";
 import LoadingSkeleton from "../../skeleton/Loading-skeleton.jsx";
+import { BiSolidHide } from "react-icons/bi";
+import { BiSolidShow } from "react-icons/bi";
 
 const UserLogin = () => {
     const {LoginFormData,LoginOnChange,subAdminFormRequest} = AdminStore()
     const[loading,setLoading] = useState('d-none');
     const[error, setError] = useState("");
+    const [showPassword, setShowPassword] = useState(false)
+
 
     const navigate = useNavigate();
 
@@ -23,6 +27,8 @@ const UserLogin = () => {
                 navigate("/auth/admin/dashboard");
                 setLoading('d-none');
                 toast.success("logged in successfully!");
+                LoginOnChange('email',"")
+                LoginOnChange('password',"")
             }
             else{
                 if(res['status']==="failed"){
@@ -47,19 +53,36 @@ const UserLogin = () => {
                     <div className="p-3 bg-white rounded shadow">
                         <form onSubmit={SubmitButton}>
                             <div className="text-center">
-                                <p className="text-muted mb-4">Log in to <span className="text-info">BlogOnAgency</span>.</p>
+                                <p className="text-muted mb-4">Log in to <span className="text-info">BlogOnAgency</span>.
+                                </p>
                             </div>
                             <div>
                                 <p className="text-danger">{error}</p>
                             </div>
                             <input type="text" className="form-control mb-3" placeholder="email address"
                                    defaultValue={LoginFormData.email}
-                                   onChange={(e) => {LoginOnChange("email", e.target.value)}}
+                                   onChange={(e) => {
+                                       LoginOnChange("email", e.target.value)
+                                   }}
                             />
-                            <input type="password" className="form-control mb-3" placeholder="password"
-                                   defaultValue={LoginFormData.password}
-                                   onChange={(e) => {LoginOnChange("password", e.target.value)}}
-                            />
+                            <div className="input-group mb-3">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    className="form-control"
+                                    placeholder="password"
+                                    defaultValue={LoginFormData.password}
+                                    onChange={(e) => {
+                                        LoginOnChange("password", e.target.value);
+                                    }}
+                                />
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-secondary"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? <BiSolidHide /> : <BiSolidShow />}
+                                </button>
+                            </div>
                             <div className="text-center">
                                 <button type="submit" className="btn px-5 py-2 btn-primary w-100">Login up</button>
                             </div>
