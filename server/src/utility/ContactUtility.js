@@ -16,8 +16,8 @@ export const ContactSend = async (FullName,EmailTo, EmailText, EmailSubject) => 
     })
 
     let mailOption = {
-        from : `AGENCY-BLOG-WEBSITE ${EMAIL_USER}`,
-        to : EmailTo,
+        from : `${EmailTo}`,
+        to : EMAIL_USER,
         subject : EmailSubject,
         html: `<!DOCTYPE html>
             <html lang="en">
