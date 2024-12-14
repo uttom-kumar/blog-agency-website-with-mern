@@ -126,7 +126,7 @@ const AdminRegisterComponent = () => {
                                 </div>
                             </div>
                             <div>
-                                <button type="button" className="btn btn-outline-none border-0 fw-bold"
+                                <button type="button" className="btn p-0 m-0 btn-outline-none border-0"
                                         onClick={GenerateButton}
                                 >Generate password</button>
                             </div>
@@ -135,7 +135,7 @@ const AdminRegisterComponent = () => {
                                     type={showPassword ? "text" : "password"}
                                     className="form-control"
                                     placeholder="Password"
-                                    defaultValue={RegisterForm.password}
+                                    value={RegisterForm.password}
                                     onChange={(e) => RegisterOnChange('password', e.target.value)}
                                 />
                                 <button

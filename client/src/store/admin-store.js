@@ -82,11 +82,16 @@ const AdminStore = create((set) => ({
 //     ---------Generate password -------------
     GeneratePasswordRequest: async () => {
         let url = `https://blog-agency-website-with-mern.vercel.app/api/GeneratePassword`
-        let res = await axios.post(url)
+        let res = await axios.get(url)
         console.log(res)
-        // if(res.data['status'] === "success"){
-        //     set({RegisterForm : res.data})
-        // }
+        if(res.data['status'] === "success"){
+            set((state) => ({
+                RegisterForm: {
+                    ...state.RegisterForm,
+                    password: res.data.data
+                }
+            }));
+        }
     }
 
 }))
