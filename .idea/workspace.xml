@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-register-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Admin/AdminComponent/Admin-Form/admin-register-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/contact/contact-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/contact/contact-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utility/ValidationHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utility/ValidationHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/ContactService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/services/ContactService.js" afterDir="false" />
-    </list>
+    <list default="true" id="8740d200-9dc1-4809-9599-ce11f56d587e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +76,7 @@
       <workItem from="1734030820801" duration="10564000" />
       <workItem from="1734076316602" duration="16093000" />
       <workItem from="1734102326243" duration="7481000" />
-      <workItem from="1734150058258" duration="3144000" />
+      <workItem from="1734150058258" duration="3599000" />
     </task>
     <servers />
   </component>

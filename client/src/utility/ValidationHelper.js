@@ -8,7 +8,7 @@ export const isDesEmpty = (value) => {
 }
 
 export const IsEmail = (value) => {
-    let EmailRegex = /\S+@\S+\.\S+/
+    let EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return EmailRegex.test(value)
 }
 
