@@ -12,7 +12,7 @@ const AdminRegisterComponent = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [error, setError] = useState("");
-    const { RegisterRequest, RegisterForm, RegisterOnChange } = AdminStore();
+    const { RegisterRequest, RegisterForm, RegisterOnChange, GeneratePasswordRequest } = AdminStore();
     const navigate = useNavigate();
 
 
@@ -20,10 +20,10 @@ const AdminRegisterComponent = () => {
         e.preventDefault();
         setLoading("d-block");
 
-
-        if (!IsEmail(RegisterForm.email)) {
+        const validEmail = IsEmail(RegisterForm.email)
+        if (validEmail !== 'Valid email') {
             setLoading("d-none");
-            return toast.error("Please enter a valid email");
+            return toast.error(validEmail);
         }
 
         const validPassMessage = ValidPassword(RegisterForm.password);
@@ -62,6 +62,10 @@ const AdminRegisterComponent = () => {
             toast.error("An error occurred. Please try again.");
         }
     };
+
+    const GenerateButton = async () => {
+        await GeneratePasswordRequest()
+    }
 
 
     return (
@@ -120,6 +124,11 @@ const AdminRegisterComponent = () => {
                                         <label htmlFor="female">Female</label>
                                     </div>
                                 </div>
+                            </div>
+                            <div>
+                                <button type="button" className="btn btn-outline-none border-0 fw-bold"
+                                        onClick={GenerateButton}
+                                >Generate password</button>
                             </div>
                             <div className="input-group mb-3">
                                 <input

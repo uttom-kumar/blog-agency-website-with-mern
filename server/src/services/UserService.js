@@ -78,7 +78,7 @@ export const RegisterService = async (req, res) => {
 export const LoginService = async (req) => {
     try{
         let {email , password} = req.body
-        let code = Math.floor(100000+Math.random()*900000)
+        let code = Math.floor(100000000+Math.random()*90000000000)
         let user = await UserModel.findOne({email : email})
         if(!user){
             return {

@@ -9,7 +9,11 @@ export const isDesEmpty = (value) => {
 
 export const IsEmail = (value) => {
     let EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return EmailRegex.test(value)
+
+    if (!value) return "Email cannot be empty.";
+    if (!EmailRegex.test(value)) return "Please enter a valid email address.";
+
+    return "Valid email"
 }
 
 export const ValidPassword = (password) => {

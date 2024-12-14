@@ -8,6 +8,7 @@ import {
     RegisterService, ResetPasswordService, subAdminLoginService,
     UpdateProfileService,
 } from "../services/UserService.js";
+import {GeneratePasswordService} from "../services/GeneratePassword.js";
 
 
 export const subAdminLogin = async (req, res) => {
@@ -60,5 +61,10 @@ export const RecoverVerifyOtp = async (req, res) => {
 
 export const ResetPassword = async (req, res) => {
     let result = await ResetPasswordService (req, res)
+    return res.json(result)
+}
+
+export const GeneratePassword = async (req, res) => {
+    let result = await GeneratePasswordService ()
     return res.json(result)
 }

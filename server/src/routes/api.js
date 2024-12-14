@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 import {
-    DeleteProfile,
+    DeleteProfile, GeneratePassword,
     Login,
     LogOutProfile,
     ReadProfile,
@@ -54,6 +54,7 @@ router.post('/DeleteProfile',AuthMiddleware,DeleteProfile)
 router.get('/RecoverEmailVerify',RecoverEmailVerify)
 router.post('/RecoverVerifyOtp',RecoverVerifyOtp)
 router.post('/ResetPassword',ResetPassword)
+router.get('/GeneratePassword',GeneratePassword)
 
 //blog related api
 router.post("/BlogCreate",AuthMiddleware , BlogCreate)
