@@ -1,34 +1,40 @@
 import toast from "react-hot-toast";
 import ContactStore from "../../store/contact-store.js";
 import {isEmpty} from "../../utility/ValidationHelper.js";
+import {useState} from "react";
+import LoadingSkeleton from "../../skeleton/Loading-skeleton.jsx";
 
 
 
 const ContactComponent = () => {
+    const [loading, setLoading] = useState('d-none');
     const {ContactFormData,ContactFormOnChange,ContactCreateRequest}=ContactStore()
 
 
 
     const SubmitButton=async ()=>{
-        try{
-            let res = await ContactCreateRequest(ContactFormData)
+        let {fullName, email, subject, msg} =ContactFormData
+        setLoading('d-block')
 
-            if(res){
-                toast.success("Successfully submit");
-            }
-            else if(isEmpty(ContactFormData)){
-                toast.error("Some information Required ")
-            }
-            else {
-                toast.error("Submission failed. Please try again.");
-            }
+        let res = await ContactCreateRequest(ContactFormData)
+        if(!fullName || !email || !subject || !msg){
+            setLoading('d-none')
+            toast.error('all fields required');
         }
-        catch (e){
-            toast.error("An error occurred. Please try again.");
+        else if(res){
+            setLoading('d-none')
+            toast.success("Successfully submit");
+        }
+        else {
+            setLoading('d-none')
+            toast.error("Submission failed. Please try again.");
         }
     }
     return (
         <>
+            <div className={loading}>
+                <LoadingSkeleton />
+            </div>
             <div className="container my-4">
                 <form className="col-lg-6 col-md-8 mx-auto p-4 rounded shadow  bg-white">
                     <div className="row">

@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import AdminStore from "../../../store/admin-store.js";
 import { useState } from "react";
-import { IsEmail } from "../../../utility/ValidationHelper.js";
+import {IsEmail, ValidPassword} from "../../../utility/ValidationHelper.js";
 import LoadingSkeleton from "../../../skeleton/Loading-skeleton.jsx";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 
@@ -15,44 +15,54 @@ const AdminRegisterComponent = () => {
     const { RegisterRequest, RegisterForm, RegisterOnChange } = AdminStore();
     const navigate = useNavigate();
 
+
     const SubmitButton = async (e) => {
         e.preventDefault();
+        setLoading("d-block");
+
+
+        if (!IsEmail(RegisterForm.email)) {
+            setLoading("d-none");
+            return toast.error("Please enter a valid email");
+        }
+
+        const validPassMessage = ValidPassword(RegisterForm.password);
+        if (validPassMessage !== "Password is valid.") {
+            setLoading("d-none");
+            return toast.error(validPassMessage);
+        }
+
+
+        if (confirmPassword !== RegisterForm.password) {
+            setLoading("d-none");
+            return toast.error("Passwords do not match");
+        }
+
 
         try {
-            setLoading("d-block");
-
-            // Validate email before sending the request
-            if (!IsEmail(RegisterForm.email)) {
-                setLoading("d-none");
-                return toast.error("Please enter a valid email");
-            }
-
-            // Check password confirmation
-            if (confirmPassword !== RegisterForm.password) {
-                setLoading("d-none");
-                return setError("Passwords do not match");
-            }
-
             let res = await RegisterRequest(RegisterForm);
 
             if (res["status"] === "success") {
-                navigate("/auth/admin/login");
-                setLoading("d-none");
                 toast.success("Registered successfully!");
-                RegisterOnChange('fullName',"")
-                RegisterOnChange('email',"")
-                RegisterOnChange('gender',"")
-                RegisterOnChange('password',"")
-                setConfirmPassword("")
+                navigate("/auth/admin/login");
+
+                // Clear form inputs after success
+                setLoading("d-none");
+                RegisterOnChange("fullName", "");
+                RegisterOnChange("email", "");
+                RegisterOnChange("gender", "");
+                RegisterOnChange("password", "");
+                setConfirmPassword("");
             } else {
                 setLoading("d-none");
-                setError(res['message']);
+                setError(res["message"]);
             }
-        } catch (err) {
+        } catch (error) {
             setLoading("d-none");
-            toast.error("An unexpected error occurred. Please try again later.");
+            toast.error("An error occurred. Please try again.");
         }
     };
+
 
     return (
         <>

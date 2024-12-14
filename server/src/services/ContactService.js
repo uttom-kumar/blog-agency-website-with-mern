@@ -7,7 +7,10 @@ export const CreateContactService = async (req) => {
         let {fullName, email , subject, msg} = reqBody
 
         if (!fullName || !email || !subject || !msg) {
-           return ("All fields are required");
+           return {
+               status : "failed",
+               message: "All fields are required"
+           };
         }
 
         let EmailSubject = `${subject}`
